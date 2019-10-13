@@ -33,13 +33,13 @@
 <body>
 
 <div class="wraper">
-    <form action="${pageContext.request.contextPath}/" method ="post">
+    <form action="${pageContext.request.contextPath}/show_offers" method ="post">
     <div class="form-group col-md-12 container">
 		<input type="text" id="login" class="form-control t" name="username" placeholder="Username" autocomplete="off"><br>
 		<input type="password" id="password" class="form-control" name="password" placeholder="Password">
 		<div align="center">
 		<input type="submit" class="btn btn-outline-light t" value="Iniciar Sesión">
-		<a class="btn btn-outline-warning t" href="${pageContext.request.contextPath}/account/list">Registrarse</a>
+		<a class="btn btn-outline-warning t" href="${pageContext.request.contextPath}/register">Registrarse</a>
 		</div>
     </div>
     

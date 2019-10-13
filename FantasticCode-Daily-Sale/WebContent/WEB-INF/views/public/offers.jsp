@@ -4,47 +4,83 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
-<link href="./resources/css/bootstrap.css" media="all" type="text/css" rel="stylesheet">
-<style type="text/css">
-	.wraper{
-		display:flex;
-		align-content: center;
-		justify-content: center;
-		margin-top: 60px;
-	}
-	.container{
-		margin-top: 50%;
-	}
-	
-	.t{
-		margin-top: 10px;
-	}
-	.e{
-		margin-left: 80px;
-	}
-	body{
-		  background-position: center;
-		  background-image: url("./resources/prism.png");
-		  }
-
-</style>
+<title>Ofertas</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+<link rel="stylesheet" href="./resources/css/normalize.css">
+<link rel="stylesheet" href="./resources/css/ofertasDia.css">
 </head>
 <body>
-
-<div class="wraper">
-    <form action="${pageContext.request.contextPath}/login" method ="post">
-    <div class="form-group col-md-12 container">
-		<input type="text" id="login" class="form-control t" name="username" placeholder="Username" autocomplete="off"><br>
-		<input type="password" id="password" class="form-control" name="password" placeholder="Password">
-		<div align="center">
-		<input type="submit" class="btn btn-outline-light t" value="Iniciar Sesión">
-		<a class="btn btn-outline-warning t" href="${pageContext.request.contextPath}/register">Registrarse</a>
+	<form action="${pageContext.request.contextPath}/show_offers/1" method ="post">
+	
+	<header class="site-header">
+		<div class="contenedor contenido-header">	
+					<h2>FantasticCode</h2>	
+					<div>
+						<nav id="navegacion" class="navegacion">
+						<a href="nosotros.html">Nosotros</a>
+                    	<a href="anuncios.html">Anuncios</a>
+                    	<a href="blog.html">Blog</a>
+                    	<a href="contacto.html">Contacto</a>
+						</nav>
+					</div>
 		</div>
-    </div>
-    
-    
-    </form>
-  </div>
+	</header>
+	
+	<main class="seccion contenedor">
+	<h2 class="fw-300 centrar-texto">OFERTAS DEL DÍA</h2>
+		<div class="contenedor-anuncios">
+			<div class="anuncio">
+				<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg" >
+				<div class="contenido-anuncio">
+					<h3>Primer anuncio</h3>
+					<p>Primer anuncio Primer anuncio Primer anuncio</p>
+					<a href="${pageContext.request.contextPath}/show_offer/1" class="boton boton-amarillo d-block">Ver Información</a>
+				</div>
+			</div>
+			<div class="anuncio">
+				<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
+				<div class="contenido-anuncio">
+					<h3>Primer anuncio</h3>
+					<p>Primer anuncio Primer anuncio Primer anuncio</p>
+					<a href="login.jsp" class="boton boton-amarillo d-block">Ver Información</a>
+				</div>
+			</div>
+			<div class="anuncio">
+				<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
+				<div class="contenido-anuncio">
+					<h3>Primer anuncio</h3>
+					<p>Primer anuncio Primer anuncio Primer anuncio</p>
+					<a href="login.jsp" class="boton boton-amarillo d-block">Ver Información</a>
+				</div>
+			</div>
+		</div>
+		<div class="contenedor-anuncios">
+			<div class="anuncio">
+				<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
+				<div class="contenido-anuncio">
+					<h3>Primer anuncio</h3>
+					<p>Primer anuncio Primer anuncio Primer anuncio</p>
+					<a href="login.jsp" class="boton boton-amarillo d-block">Ver Información</a>
+				</div>
+			</div>
+			<div class="anuncio">
+				<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
+				<div class="contenido-anuncio">
+					<h3>Primer anuncio</h3>
+					<p>Primer anuncio Primer anuncio Primer anuncio</p>
+					<a href="login.jsp" class="boton boton-amarillo d-block">Ver Información</a>
+				</div>
+			</div>
+			<div class="anuncio">
+				<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
+				<div class="contenido-anuncio">
+					<h3>Primer anuncio</h3>
+					<p>Primer anuncio Primer anuncio Primer anuncio</p>
+					<a href="login.jsp" class="boton boton-amarillo d-block">Ver Información</a>
+				</div>
+			</div>
+		</div>
+	</main>
+
 </body>
 </html>

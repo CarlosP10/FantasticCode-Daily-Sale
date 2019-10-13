@@ -1,11 +1,5 @@
 package com.fantasticCode.service;
 
-import java.util.List;
-
-import org.springframework.dao.DataAccessException;
-
-import com.fantasticCode.entities.User;
-
 public interface UserService {
 
 	/*
