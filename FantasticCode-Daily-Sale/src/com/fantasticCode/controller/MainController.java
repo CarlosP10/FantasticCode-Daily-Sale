@@ -15,8 +15,14 @@ public class MainController {
 	@RequestMapping(value = "/")
 	public ModelAndView initMain() {
 		ModelAndView mav = new ModelAndView();
-			mav.setViewName("login");
+			mav.setViewName("user/login");
 		return mav;
 	}
 
+	@RequestMapping(value = "/show_offer")
+	public ModelAndView OpenOffer() {
+		ModelAndView mav = new ModelAndView();
+			mav.setViewName("public/view_offer");
+		return mav;
+	}
 }
