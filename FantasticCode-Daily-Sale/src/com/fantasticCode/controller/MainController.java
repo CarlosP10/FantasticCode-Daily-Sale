@@ -19,8 +19,6 @@ import com.fantasticCode.entities.Account;
 import com.fantasticCode.service.AccountService;
 import com.fantasticCode.service.UserService;
 
-
-
 @Controller
 public class MainController {
 	static Logger log = Logger.getLogger(MainController.class.getName());
@@ -33,13 +31,21 @@ public class MainController {
 		return mav;
 	}
 
+  
+  @RequestMapping(value = "/show_offers")
+	public ModelAndView OpenOffer() {
+		ModelAndView mav = new ModelAndView();
+			mav.setViewName("ofertasDia");
+		return mav;
+	}
+  
 	@RequestMapping(value = "/show_offer")
 	public ModelAndView OpenOffer() {
 		ModelAndView mav = new ModelAndView();
 			mav.setViewName("admin/account/view_all");
 		return mav;
 	}
-	
+  
 	
 	@Autowired
 	private UserService userService;
@@ -50,12 +56,9 @@ public class MainController {
 	public ModelAndView vertodos() throws Exception{
 		ModelAndView mav = new ModelAndView();
 		int pagina=0;
-	
-		
 		List<Account> accounts = null;
-		
 		accounts = accountService.findAll(pagina);
-		System.out.println("El tamañò es:"+accounts.size());
+		System.out.println("El tamaï¿½ï¿½ es:"+accounts.size());
 		mav.addObject("accounts", accounts);
 		mav.addObject("actual", Math.min((pagina + 1) * 10,accountService.countAll()));
 		mav.addObject("total", accountService.countAll());
@@ -63,7 +66,5 @@ public class MainController {
 		mav.setViewName("admin/account/view_all");
 		return mav;
 	}
-
-
-
+	
 }
