@@ -15,9 +15,9 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
 	public Page<Reservation> findAll(Pageable page);
 	
 	public Page<Reservation> findByAccount(Account account,Pageable page);
-	public Page<Reservation> findByTransactiondatehourBetweenAndAccount(Date start,Date end,Account a,Pageable page);
+	/*public Page<Reservation> findByTransactiondatehourBetweenAndAccount(Date start,Date end,Account a,Pageable page);
 	
 	public List<Reservation> findByTransactiondatehourBetweenAndAccount(Date start,Date end,Account a);
-	
+	*/
 	
 }

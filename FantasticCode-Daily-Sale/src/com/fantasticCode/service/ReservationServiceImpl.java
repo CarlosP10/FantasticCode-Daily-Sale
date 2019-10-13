@@ -32,11 +32,11 @@ public class ReservationServiceImpl implements ReservationService{
 		return reservationRepository.findByAccount(id,PageRequest.of(page, 10, new Sort(Direction.ASC, "idreservation"))).getContent();
 	}
 	
-	
+	/*
 	public List<Reservation> findAll(Date start,Date end,int page,Account id) {
 		// TODO Auto-generated method stub
 		return reservationRepository.findByTransactiondatehourBetweenAndAccount(start,end,id,PageRequest.of(page, 10, new Sort(Direction.ASC, "idtransaction"))).getContent();
-	}
+	}*/
 	
 	
 	public Reservation findOne(Integer transaction) {
@@ -48,21 +48,35 @@ public class ReservationServiceImpl implements ReservationService{
 		// TODO Auto-generated method stub
 		return reservationRepository.count();
 	}
-
+/*
 	public long countAll(Date start,Date end,int page,Account id) {
 		// TODO Auto-generated method stub
 		return reservationRepository.findByTransactiondatehourBetweenAndAccount(start,end,id).size();
 	}
+	*/
 	@Transactional
 	public void save(Reservation transaction) {
 		reservationRepository.save(transaction);
 	}
+	
 
 	@Transactional
 	@Override
 	public void delete(Reservation transaction) {
 		reservationRepository.delete(transaction);
 		
+	}
+
+	@Override
+	public List<Reservation> findAll(Date start, Date end, int page, Account id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long countAll(Date start, Date end, int page, Account id) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	

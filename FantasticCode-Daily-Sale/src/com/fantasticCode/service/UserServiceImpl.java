@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userRepository.findById(user).get();
 	}
-	
+	/*
 	public boolean findOneUser(String username, String password) throws DataAccessException {
 		boolean result=false;
 		if(userRepository.findOneUser(username, password)==1) result=true;
@@ -58,6 +58,6 @@ public class UserServiceImpl implements UserService {
     public User savedUser(User user) {
         return userRepository.save(user);
     }
-	
+*/
 	
 }

@@ -8,7 +8,7 @@ import com.fantasticCode.entities.User;
 
 public interface UserService {
 
-	
+	/*
 	public List<User> findAll(int page);
 	public User findOne(Integer code);
 	public boolean findOneUser(String username, String password) throws DataAccessException;
@@ -16,5 +16,5 @@ public interface UserService {
 	public long countAll();
 	public void save(User user);
 	public void delete(User user);
-	
+	*/
 }
