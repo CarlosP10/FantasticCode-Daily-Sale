@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
 public class MainController {
 	static Logger log = Logger.getLogger(MainController.class.getName());
@@ -15,10 +14,15 @@ public class MainController {
 	@RequestMapping(value = "/")
 	public ModelAndView initMain() {
 		ModelAndView mav = new ModelAndView();
-			mav.setViewName("login");
+			mav.setViewName("user/login");
 		return mav;
 	}
 	
 	
 
+  
+  
+	
+	
+	
 }
