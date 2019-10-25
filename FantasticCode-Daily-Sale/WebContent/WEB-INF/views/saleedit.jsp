@@ -40,6 +40,7 @@
            
          <tr>    
           <td> </td>    
+          <button type="button" class="btn btn-danger">Danger</button>
           <td><input type="submit" value="Edit Save" /></td>    
          </tr>    
         </table>    
