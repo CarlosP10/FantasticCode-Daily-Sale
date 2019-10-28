@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fantasticCode.entities.Offer;
 import com.fantasticCode.repositories.OfferRepository;
@@ -35,12 +36,12 @@ public class OfferServiceImpl implements OfferService{
 		return offerRepository.count();
 	}
 
-	
+	@Transactional
 	public void save(Offer film) {
 		offerRepository.save(film);
 	}
 
-
+	@Transactional
 	@Override
 	public void delete(Offer offer) {
 		offerRepository.delete(offer);
