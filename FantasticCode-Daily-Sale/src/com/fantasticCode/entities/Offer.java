@@ -23,7 +23,7 @@ public class Offer {
 	@Column(name = "offer_id")
 	private Integer idoffer;
 	
-	@Column(name = "offer_name")
+	@Column(name = "name")
 	private String offername;
 	
 	@Column(name = "description")
@@ -36,13 +36,13 @@ public class Offer {
 	private String urlposter;
 	
 	@Column(name = "availability")
-	private String availability;
+	private int availability;
 
 	@Column(name = "start_date")
-	private String startdate;
+	private Date startdate;
 	
 	@Column(name = "end_date")
-	private String enddate;
+	private Date enddate;
 	
 	@Column(name = "code")
 	private String offer_code;
@@ -51,7 +51,7 @@ public class Offer {
 	private int offer_state;
 	
 	@Column(name = "price_range")
-	private String price_range;
+	private float price_range;
 			
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_offer_type", referencedColumnName = "id_type")
@@ -101,27 +101,27 @@ public class Offer {
 		this.urlposter = urlposter;
 	}
 
-	public String getAvailability() {
+	public int getAvailability() {
 		return availability;
 	}
 
-	public void setAvailability(String availability) {
+	public void setAvailability(int availability) {
 		this.availability = availability;
 	}
 
-	public String getStartdate() {
+	public Date getStartdate() {
 		return startdate;
 	}
 
-	public void setStartdate(String startdate) {
+	public void setStartdate(Date startdate) {
 		this.startdate = startdate;
 	}
 
-	public String getEnddate() {
+	public Date getEnddate() {
 		return enddate;
 	}
 
-	public void setEnddate(String enddate) {
+	public void setEnddate(Date enddate) {
 		this.enddate = enddate;
 	}
 
@@ -141,11 +141,11 @@ public class Offer {
 		this.offer_state = offer_state;
 	}
 
-	public String getPrice_range() {
+	public float getPrice_range() {
 		return price_range;
 	}
 
-	public void setPrice_range(String price_range) {
+	public void setPrice_range(float price_range) {
 		this.price_range = price_range;
 	}
 
@@ -166,8 +166,8 @@ public class Offer {
 	}
 
 	public Offer(Integer idoffer, String offername, String description, String duration, String urlposter,
-			String availability, String startdate, String enddate, String offer_code, int offer_state,
-			String price_range, Offer_type type, Date creation_date_hour) {
+			int availability, Date startdate, Date enddate, String offer_code, int offer_state, float price_range,
+			Offer_type type, Date creation_date_hour) {
 		super();
 		this.idoffer = idoffer;
 		this.offername = offername;
@@ -189,6 +189,9 @@ public class Offer {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
+	
 
 	
 	
