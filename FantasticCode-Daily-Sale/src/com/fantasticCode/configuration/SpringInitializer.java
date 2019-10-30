@@ -1,3 +1,4 @@
+
 package com.fantasticCode.configuration;
 
 import javax.servlet.ServletContext;
@@ -40,5 +41,6 @@ public class SpringInitializer extends AbstractAnnotationConfigDispatcherServlet
 	   protected String[] getServletMappings() {
 	      return new String[] { "/" };
 	   }
+
 
 }
