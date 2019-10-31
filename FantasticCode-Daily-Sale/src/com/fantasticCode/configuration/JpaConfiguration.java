@@ -32,7 +32,7 @@ public class JpaConfiguration {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
 		em.setPersistenceUnitName("software");
-		em.setPackagesToScan("com.fantasticCode.domain");
+		em.setPackagesToScan("com.fantasticCode.entities");
 		
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
@@ -44,7 +44,7 @@ public class JpaConfiguration {
 	public DataSource dataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/ingSoft");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/FantasticCode");
 
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("root");
