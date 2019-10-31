@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="./resources/css/ofertasDia.css">
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/show_offers/1" method ="post">
+	
 	
 	<header class="site-header">
 		<div class="contenedor contenido-header">	
