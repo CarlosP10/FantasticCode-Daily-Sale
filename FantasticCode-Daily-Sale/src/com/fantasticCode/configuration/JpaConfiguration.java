@@ -32,7 +32,7 @@ public class JpaConfiguration {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
 		em.setPersistenceUnitName("software");
-		em.setPackagesToScan("com.fantasticCode.domain");
+		em.setPackagesToScan("com.fantasticCode.entities");
 		
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
