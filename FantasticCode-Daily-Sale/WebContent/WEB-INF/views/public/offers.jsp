@@ -24,6 +24,7 @@
 						<a href="nosotros.html">Nosotros</a> <a href="anuncios.html">Anuncios</a>
 						<a href="blog.html">Blog</a> <a href="contacto.html">Contacto</a>
 					</nav>
+
 				</div>
 			</div>
 		</header>
@@ -42,53 +43,7 @@
 						</div>
 						</c:forEach>
 					</div>
-					<div class="anuncio">
-						<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-						<div class="contenido-anuncio">
-							<h3>Primer anuncio</h3>
-							<p>Primer anuncio Primer anuncio Primer anuncio</p>
-							<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-								Información</a>
-						</div>
-					</div>
-					<div class="anuncio">
-						<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-						<div class="contenido-anuncio">
-							<h3>Primer anuncio</h3>
-							<p>Primer anuncio Primer anuncio Primer anuncio</p>
-							<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-								Información</a>
-						</div>
-					</div>
-				</div>
-			<div class="contenedor-anuncios">
-				<div class="anuncio">
-					<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-					<div class="contenido-anuncio">
-						<h3>Primer anuncio</h3>
-						<p>Primer anuncio Primer anuncio Primer anuncio</p>
-						<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-							Información</a>
-					</div>
-				</div>
-				<div class="anuncio">
-					<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-					<div class="contenido-anuncio">
-						<h3>Primer anuncio</h3>
-						<p>Primer anuncio Primer anuncio Primer anuncio</p>
-						<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-							Información</a>
-					</div>
-				</div>
-				<div class="anuncio">
-					<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-					<div class="contenido-anuncio">
-						<h3>Primer anuncio</h3>
-						<p>Primer anuncio Primer anuncio Primer anuncio</p>
-						<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-							Información</a>
-					</div>
-				</div>
+				
 			</div>
 		</main>
 </body>
