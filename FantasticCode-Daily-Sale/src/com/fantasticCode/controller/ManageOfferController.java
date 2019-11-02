@@ -10,6 +10,7 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +22,7 @@ import com.fantasticCode.service.OfferService;
 import com.fantasticCode.service.Offer_type_Service;
 
 @Controller
-public class CreateOffersController {
+public class ManageOfferController {
 
 	@Autowired
 	private OfferService offerService;
@@ -51,6 +52,24 @@ public class CreateOffersController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/edit_offer/{id}")
+	public ModelAndView EditOfferView(@PathVariable(value="id") int id) {
+		ModelAndView mav = new ModelAndView();
+		Offer offer=null;
+		
+		List<Offer_type> offer_type_list = null;
+		try {
+			if (offer_type_Service.findAll() != null) offer_type_list = offer_type_Service.findAll();
+			
+			if (offer_type_Service.findAll() != null) offer=offerService.findOne(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		mav.addObject("offer", offer);
+		mav.addObject("offer_type_list", offer_type_list);
+		mav.setViewName("admin/admin-company/view_all2");
+		return mav;
+	}
 	@RequestMapping(value = "/save_new_offer", method = RequestMethod.POST)
 	public ModelAndView SaveOfferRedirection(@RequestParam String offername,
 			@RequestParam String description, @RequestParam String urlposter,
@@ -95,5 +114,7 @@ public class CreateOffersController {
 		mav.setViewName("redirect:/show_offers");
 		return mav;
 	}
-
+	
+	
+	
 }
