@@ -13,83 +13,35 @@
 <link rel="stylesheet" href="./resources/css/ofertasDia.css">
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/show_offers/1"
-		method="post">
 
-		<header class="site-header">
-			<div class="contenedor contenido-header">
-				<h2>FantasticCode</h2>
-				<div>
-					<nav id="navegacion" class="navegacion">
-						<a href="nosotros.html">Nosotros</a> <a href="anuncios.html">Anuncios</a>
-						<a href="blog.html">Blog</a> <a href="contacto.html">Contacto</a>
-					</nav>
-				</div>
+
+	<header class="site-header">
+		<div class="contenedor contenido-header">
+			<h2>FantasticCode</h2>
+			<div>
+				<nav id="navegacion" class="navegacion">
+					<a href="nosotros.html">Nosotros</a> <a href="anuncios.html">Anuncios</a>
+					<a href="blog.html">Blog</a> <a href="contacto.html">Contacto</a>
+				</nav>
 			</div>
-		</header>
+		</div>
+	</header>
 
-		<main class="seccion contenedor">
-			<h2 class="fw-300 centrar-texto">OFERTAS DEL DÍA</h2>
-				<div class="contenedor-anuncios">
-					<div class="anuncio">
-						<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-						<c:forEach items="${ofertas}" var="ofertas">
-						<div class="contenido-anuncio">
-							<h3>${ofertas.offername }</h3>
-							<p>${ofertas.description }</p>
-							<a href="${pageContext.request.contextPath}/show_offer/1"
-								class="boton boton-amarillo d-block">Ver Información</a>
-						</div>
-						</c:forEach>
-					</div>
-					<div class="anuncio">
-						<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-						<div class="contenido-anuncio">
-							<h3>Primer anuncio</h3>
-							<p>Primer anuncio Primer anuncio Primer anuncio</p>
-							<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-								Información</a>
-						</div>
-					</div>
-					<div class="anuncio">
-						<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-						<div class="contenido-anuncio">
-							<h3>Primer anuncio</h3>
-							<p>Primer anuncio Primer anuncio Primer anuncio</p>
-							<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-								Información</a>
-						</div>
-					</div>
-				</div>
+	<main class="seccion contenedor">
+		<h2 class="fw-300 centrar-texto">OFERTAS DEL DÍA</h2>
+		<c:forEach items="${ofertas}" var="ofertas">
 			<div class="contenedor-anuncios">
 				<div class="anuncio">
-					<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
+					<img alt="Anuncio" src="${ofertas.urlposter}">
 					<div class="contenido-anuncio">
-						<h3>Primer anuncio</h3>
-						<p>Primer anuncio Primer anuncio Primer anuncio</p>
-						<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-							Información</a>
-					</div>
-				</div>
-				<div class="anuncio">
-					<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-					<div class="contenido-anuncio">
-						<h3>Primer anuncio</h3>
-						<p>Primer anuncio Primer anuncio Primer anuncio</p>
-						<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-							Información</a>
-					</div>
-				</div>
-				<div class="anuncio">
-					<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-					<div class="contenido-anuncio">
-						<h3>Primer anuncio</h3>
-						<p>Primer anuncio Primer anuncio Primer anuncio</p>
-						<a href="login.jsp" class="boton boton-amarillo d-block">Ver
-							Información</a>
+						<h3>${ofertas.offername}</h3>
+						<p>${ofertas.description}</p>
+						<a href="${pageContext.request.contextPath}/show_offer/1"
+							class="boton boton-amarillo d-block">Ver Información</a>
 					</div>
 				</div>
 			</div>
-		</main>
+		</c:forEach>
+	</main>
 </body>
 </html>
