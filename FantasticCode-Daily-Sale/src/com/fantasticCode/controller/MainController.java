@@ -13,32 +13,32 @@ import com.fantasticCode.service.OfferService;
 
 @Controller
 public class MainController {
-	
+
 	@Autowired
 	private OfferService offerService;
-	
+
 	static Logger log = Logger.getLogger(MainController.class.getName());
 
 	@RequestMapping(value = "/")
 	public ModelAndView initMain() {
 		ModelAndView mav = new ModelAndView();
-			mav.setViewName("user/login");
+		mav.setViewName("user/login");
 		return mav;
 	}
-	
-  @RequestMapping(value = "/offer")
-  public ModelAndView offers() {
-	  ModelAndView mav = new ModelAndView();
-	  List<Offer> ofertas = null;
-	  try {
-		if(offerService.findAll() != null) {
-			ofertas = offerService.findAll();
+
+	@RequestMapping(value = "/offer")
+	public ModelAndView offers() {
+		ModelAndView mav = new ModelAndView();
+		List<Offer> ofertas = null;
+		try {
+			if (offerService.findAll() != null) {
+				ofertas = offerService.findAll();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
-	} catch (Exception e) {
-		// TODO: handle exception
+		mav.addObject("ofertas", ofertas);
+		mav.setViewName("public/offers");
+		return mav;
 	}
-	  mav.addObject("ofertas", ofertas);
-	  mav.setViewName("public/offers");
-	  return mav;
-  }
 }
