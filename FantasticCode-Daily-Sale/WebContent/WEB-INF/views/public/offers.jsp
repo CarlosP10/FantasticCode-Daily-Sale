@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="./resources/css/normalize.css">
 <link rel="stylesheet" href="./resources/css/ofertasDia.css">
 </head>
+
 <body>
 	<header class="site-header">
 		<div class="contenedor contenido-header">

@@ -26,6 +26,7 @@ public class MainController {
 		return mav;
 	}
 
+	
 	@RequestMapping(value = "/offer")
 	public ModelAndView offers() {
 		ModelAndView mav = new ModelAndView();
