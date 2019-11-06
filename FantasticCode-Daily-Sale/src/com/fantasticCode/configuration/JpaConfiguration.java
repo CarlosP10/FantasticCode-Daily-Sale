@@ -47,7 +47,7 @@ public class JpaConfiguration {
 		dataSource.setUrl("jdbc:postgresql://localhost:5432/FantasticCode");
 
 		dataSource.setUsername("postgres");
-		dataSource.setPassword("root");
+		dataSource.setPassword("Adiosjeje1");
 		return dataSource;
 	}
 	
