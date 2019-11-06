@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Editar Anuncio</title>
+<title>Dashboard</title>
  <!-- Custom fonts for this template-->
   <link href="./../resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
@@ -17,7 +17,6 @@
   <link href="./../resources/css/sb-admin.css" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -30,74 +29,88 @@
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
-          <a class="nav-link " href="${pageContext.request.contextPath}/logout">
+        <a class="nav-link " href="${pageContext.request.contextPath}/logout">
           <button class="btn btn-outline-danger btn-sm btn-block" >Logout</button>
-        </a>  
+        </a> 
     </ul>
 
   </nav>
 
-  <div id="wrapper">
+ <div id="wrapper">
 
     <!-- Sidebar -->
-     <ul class="sidebar navbar-nav">
+      <ul class="sidebar navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/account/list">
+        <a class="nav-link" href="${pageContext.request.contextPath}/admin/offers/view_offers">
           <i class="fas fa-fw fa-users"></i>
-          <span>Perfil administrador</span>
+          <span>Ofertas</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/function/list">
-          <i class="fas fa-fw fa-film"></i>
-          <span>Anuncios</span></a>
-      </li>
-       <li class="nav-item active">
-        <a class="nav-link" href="${pageContext.request.contextPath}/film/list">
-          <i class="fas fa-fw fa-film"></i>
-          <span>Promociones</span></a>
-      </li>
+      
     </ul>
 
     <div id="content-wrapper">
 
       <div class="container-fluid">        
         <!-- DataTables Example -->
-       <div class="col-sm-10 col-md-8 col-lg-8 offset-sm-1 offset-md-2 offset-lg-2">
-<h1>Editar Anuncio</h1>
-<form action="${pageContext.request.contextPath}/film/store" modelAttribute="film" method="post">
-<input hidden name="idfilm" value="${film.idfilm}"/>
-  <div class="form-group">
-    <label for="inputName">Nombre</label>
-    <input type="text" class="form-control" id="inputName" name="filmname" aria-describedby="nameHelp" value="${film.filmname}" required>
-    <small id="nameHelp" class="form-text text-muted">Ingresa el nombre del nuevo anuncio.</small>
-  </div>
-  
-   <div class="form-group">
-    <label for="inputDescriptionSale">Descripcion</label>
-    <input type="text" class="form-control" id="inputDescriptionSale" name="description" aria-describedby="descHelp" value="${film.description}" required>
-    <small id="descHelp" class="form-text text-muted">Ingresa la descripcion del anuncio.</small>
-  </div>
-  
-  
-    <div class="form-group">
-    <label for="inputNormalPriceSale">Precio normal del anuncio</label>
-    <input type="text" class="form-control" id="inputNormalPriceSale" name="normalSale" aria-describedby="norHelp" value="${film.normalsale}" required>
-    <small id="norHelp" class="form-text text-muted">Precio del anuncio.</small>
-  </div>
- 
-  <div class="form-group">
-    <label for="inputDiscPriceSale">Descuento del anuncio</label>
-    <input type="text" class="form-control" id="inputDiscPriceSale" name="discSale" aria-describedby="disHelp" value="${film.discount}" required>
-    <small id="disHelp" class="form-text text-muted">Descuento del anuncio.</small>
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
+        <div class="col-sm-10 col-md-10 col-lg-10 offset-sm-1 offset-md-1 offset-lg-1">
+<h1>Listado Ofertas Registradas</h1>
+<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+<div class="btn-group" role="group" >
+<a class="btn btn-secondary" href=" ${pageContext.request.contextPath}/function/new	">Nueva Oferta</a>
 </div>
-          </div>
-          
-        </div>
+<div class="btn-group align-rigth" role="group" aria-label="Button group with nested dropdown">
+		  <c:if test = "${pagina > 1}">
+		  <a href=" ${pageContext.request.contextPath}/function/list?page=${pagina-2}" class="btn btn-secondary">Anterior</a>
+		  </c:if>
+		  
+		  <c:if test = "${pagina < total/10}">
+		  <a  href=" ${pageContext.request.contextPath}/function/list?page=${pagina}"class="btn btn-secondary">Siguiente</a>
+		  </c:if>
+		  </div>
+</div>
+	<table class="table">
+	<thead>
+	  <tr>
+	    <th scope="col">Accion</th>
+	    <th scope="col">Codigo</th>
+	    <th scope="col">Nombre Oferta</th>
+	    <th scope="col">Disponibilidad</th>
+	    <th scope="col">Fecha Inicio</th>
+	    <th scope="col">Fecha Fin</th>
+	    <th scope="col">Estado</th>
+	  </tr>
+	</thead>
+	<tbody>
+		<c:forEach items="${offer_list}" var="offer_list">
+			<tr>
+				<td>
+					<div class="btn-group">
+					  <a href="${pageContext.request.contextPath}/admin/view_offer/${offer_list.idoffer}" class="btn btn-dark">Ver</a>
+					  <a href="${pageContext.request.contextPath}/admin/edit_offer/${offer_list.idoffer}"  class="btn btn-secondary">Editar</a>
+					</div>
+				</td>
+			<td>${offer_list.idoffer}</td>
+			<td>${offer_list.offername}</td>
+			<td>${offer_list.availability}</td>
+			<td>${offer_list.startdate }</td>
+			<td>${offer_list.enddate }</td>
+			<c:set var = "active" value = "${offer_list.offer_state}"/>
+			<c:if test = "${active<1}">
+			<td><a class="btn btn-danger btn-sm">Inactivo</a></td>
+			</c:if>
+			<c:if test = "${active>0}">
+			<td><a class="btn btn-success btn-sm")" >Activo</a></td>
+			</c:if>
+			
+			</tr>	
+		</c:forEach>
+	</tbody>
+	 
+	  
+	</table>
+	<p class="text-right"> Mostrando ${actual}/${total}</p>
+</div>
 
       </div>
       <!-- /.container-fluid -->
@@ -106,7 +119,7 @@
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © SOFTWARE 2019</span>
+            <span>Copyright © Ingenieria de Software 2019</span>
           </div>
         </div>
       </footer>
@@ -148,7 +161,10 @@
 
 
   <!-- Custom scripts for all pages-->
-<script src="js/sb-admin.min.js"></script>
+  <script src="js/sb-admin.min.js"></script>
+
+ 
 
 </body>
+
 </html>
