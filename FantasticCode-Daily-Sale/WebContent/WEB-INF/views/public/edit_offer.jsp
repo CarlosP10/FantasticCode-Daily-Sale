@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</header>
-	<form action="${pageContext.request.contextPath}/save_new_offer" method="post">
+	<form action="${pageContext.request.contextPath}/save_edit_offer/${offer.idoffer}" method="post">
 		<div class="anuncio">
 			<div class="card shadow mb-4"
 				style="margin-left: 100px; margin-right: 100px;">

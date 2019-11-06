@@ -115,6 +115,50 @@ public class ManageOfferController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/save_edit_offer/{id}", method = RequestMethod.POST)
+	public ModelAndView SaveEditOfferRedirection(@PathVariable(value="id") int id, @RequestParam String offername,
+			@RequestParam String description, @RequestParam String urlposter,
+			@RequestParam int availability,
+			@RequestParam String startdate,
+			@RequestParam String enddate,
+			@RequestParam String offer_code,
+			@RequestParam float price_range,
+			@RequestParam int type) {
+		
+		
+		ModelAndView mav = new ModelAndView();
+		Offer offer=new Offer();
+		offer.setOffername(offername);
+		offer.setDescription(description);
+		offer.setUrlposter(urlposter);
+		offer.setAvailability(availability);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date start_d = null;
+		Date end_d = null;
+		Date now=null;
+		String date=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		try {
+			start_d = sdf.parse(startdate);
+			end_d = sdf.parse(enddate);
+			now=sdf.parse(date);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		offer.setIdoffer(id);
+		offer.setEnddate(end_d);
+		offer.setDuration(end_d.getTime()-start_d.getTime()+"");
+		offer.setOffer_code(offer_code);
+		offer.setOffer_state(1);
+		offer.setPrice_range(price_range);
+		offer.setCreation_date_hour(now);
+		//offer.setDuration(enddate.getTime()-startdate.getTime()+"");
+		offer.setType(offer_type_Service.findOne(type));
+		offerService.save(offer);
+		mav.setViewName("redirect:/edit_offers");
+		return mav;
+	}
 	
 	
 }
