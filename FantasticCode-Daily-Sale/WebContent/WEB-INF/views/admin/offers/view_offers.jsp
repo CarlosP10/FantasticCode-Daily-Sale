@@ -88,6 +88,7 @@
 					<div class="btn-group">
 					  <a href="${pageContext.request.contextPath}/admin/view_offer/${offer_list.idoffer}" class="btn btn-dark">Ver</a>
 					  <a href="${pageContext.request.contextPath}/admin/edit_offer/${offer_list.idoffer}"  class="btn btn-secondary">Editar</a>
+					  <a href="${pageContext.request.contextPath}/admin/delete_offer/${offer_list.idoffer}"  class="btn btn-secondary">Eliminar</a>
 					</div>
 				</td>
 			<td>${offer_list.idoffer}</td>
