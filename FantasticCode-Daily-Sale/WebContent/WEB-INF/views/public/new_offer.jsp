@@ -22,6 +22,67 @@
 <link rel="stylesheet" href="./resources/css/normalize.css">
 <link rel="stylesheet" href="./resources/css/ofertasDia.css">
 <link rel="stylesheet" href="./resources/css/specific_offer.css">
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
 </head>
 <body>
 	<header class="site-header">
@@ -220,6 +281,30 @@
 								</div>
 								<div class="col-auto">
 									<i class="fas fa-qrcode fa-2x text-gray-300"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<!--Agregando estado de la oferta  -->
+				<div class="col-xl-3 col-md-6 mb-4">
+					<div class="card border-left-warning shadow h-100 py-2">
+						<div class="card-body">
+							<div class="row no-gutters align-items-center">
+								<div class="col mr-2">
+									<div
+										class="text-xs font-weight-bold text-success text-uppercase mb-1">Estado</div>
+									<div class="h5 mb-0 font-weight-bold text-gray-800 ">
+										<label class="switch align-items-center">
+										  <input type="checkbox">
+										  <span class="slider round"></span>
+										</label>
+									</div>
+								</div>
+								<div class="col-auto">
+									<i class="far fa-check-circle fa-2x text-gray-300"></i>
 								</div>
 							</div>
 						</div>
