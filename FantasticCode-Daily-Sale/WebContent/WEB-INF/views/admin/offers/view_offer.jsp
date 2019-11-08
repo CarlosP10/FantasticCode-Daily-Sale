@@ -113,7 +113,7 @@
 					</div>
 					<div class="form-group">
 						<label for="offer_type_list">Tipo de Oferta</label> 
-						<input type="text" readonly value="${offer.type}"></input>
+						<input type="text" class="form-control" readonly value="${offer.type.type}">
 					</div>
 				</div>
 			</div>
@@ -125,8 +125,8 @@
 				</div>
 				<div class="card-body">
 					<div class="form-group">
-						<label for="inputName">Descripcion</label> <textarea textarea rows="4" cols="50" aria-describedby="nameHelp" readonly value="${offer.description}"/> <small
-							id="nameHelp" class="form-text text-muted">${offer.description}</small>
+						<label for="inputName">Descripcion</label> <input type="text" class="form-control" aria-describedby="nameHelp" readonly value="${offer.description}"> <small
+							id="nameHelp" class="form-text text-muted"></small>
 					</div>
 				</div>
 			</div>
