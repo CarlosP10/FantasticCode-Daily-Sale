@@ -59,6 +59,7 @@ public class CreateOffersController {
 			@RequestParam String enddate,
 			@RequestParam String offer_code,
 			@RequestParam float price_range,
+			@RequestParam int offer_state,
 			@RequestParam int type) {
 		
 		
@@ -86,7 +87,7 @@ public class CreateOffersController {
 		offer.setEnddate(end_d);
 		offer.setDuration(end_d.getTime()-start_d.getTime()+"");
 		offer.setOffer_code(offer_code);
-		offer.setOffer_state(1);
+		offer.setOffer_state(offer_state);
 		offer.setPrice_range(price_range);
 		offer.setCreation_date_hour(now);
 		//offer.setDuration(enddate.getTime()-startdate.getTime()+"");
