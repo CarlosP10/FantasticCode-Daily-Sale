@@ -35,8 +35,7 @@
 			</div>
 		</div>
 	</header>
-	<form action="${pageContext.request.contextPath}/save_new_offer"
-		method="post">
+	<form action="${pageContext.request.contextPath}/admin/save_new_offer" method="post">
 		<div class="anuncio">
 			<div class="card shadow mb-4"
 				style="margin-left: 100px; margin-right: 100px;">
@@ -255,30 +254,6 @@
 				</div>
 
 
-			</div>
-
-			<div class="card shadow mb-4"
-				style="margin-left: 100px; margin-right: 100px">
-				<!-- Card Header - Accordion -->
-				<a href="#collapseCardExample" class="d-block card-header py-3"
-					data-toggle="collapse" role="button" aria-expanded="false"
-					aria-controls="collapseCardExample">
-					<h6 class=" font-weight-bold text-primary">Restricciones</h6>
-				</a>
-				<!-- Card Content - Collapse -->
-				<div class="collapse show" id="collapseCardExample" style="">
-					<div class="card-body">
-						<div class="form-group">
-							<label for="inputName"></label>
-							<textarea name="restrictions" style="width: 100%; height: auto;"
-								rows="10">
-						</textarea>
-							<small id="nameHelp" class="form-text text-muted">Ingrese
-								todas las restricciones deseadas.</small>
-						</div>
-
-					</div>
-				</div>
 			</div>
 			<button type="submit" class="btn-outline-success btn " value="Submit"
 				style="width: 500px; margin-right: 100px; margin-left: 100px">Guardar</button>
