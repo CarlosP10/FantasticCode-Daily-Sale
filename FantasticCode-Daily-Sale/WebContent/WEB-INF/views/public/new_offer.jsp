@@ -24,63 +24,63 @@
 <link rel="stylesheet" href="./resources/css/specific_offer.css">
 <style>
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
 }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+input:checked+.slider {
+	background-color: #2196F3;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+	border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 </style>
 </head>
@@ -96,7 +96,8 @@ input:checked + .slider:before {
 			</div>
 		</div>
 	</header>
-	<form action="${pageContext.request.contextPath}/save_new_offer" method="post">
+	<form action="${pageContext.request.contextPath}/save_new_offer"
+		method="post">
 		<div class="anuncio">
 			<div class="card shadow mb-4"
 				style="margin-left: 100px; margin-right: 100px;">
@@ -120,8 +121,8 @@ input:checked + .slider:before {
 							nombre de la oferta.</small>
 					</div>
 					<div class="form-group">
-						<label for="offer_type_list">Tipo de Oferta</label> 
-						<select	id="offer_type_list" class="form-control" name="type" required>
+						<label for="offer_type_list">Tipo de Oferta</label> <select
+							id="offer_type_list" class="form-control" name="type" required>
 
 							<c:forEach items="${offer_type_list}" var="offer_type_list">
 								<option value="${offer_type_list.idtype}">${offer_type_list.type}</option>
@@ -217,10 +218,9 @@ input:checked + .slider:before {
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
 												<div class="form-group">
 													<input type="date" class="form-control" id="fechainc"
-														min="2000-01-01" max="2100-12-31" name="startdate"> <small
-														id="nameHelp" class="form-text text-muted"
-										>Ingrese la fecha de inicio de la
-														oferta</small>
+														min="2000-01-01" max="2100-12-31" name="startdate">
+													<small id="nameHelp" class="form-text text-muted">Ingrese
+														la fecha de inicio de la oferta</small>
 												</div>
 											</div>
 										</div>
@@ -286,8 +286,8 @@ input:checked + .slider:before {
 						</div>
 					</div>
 				</div>
-				
-				
+
+
 				<!--Agregando estado de la oferta  -->
 				<div class="col-xl-3 col-md-6 mb-4">
 					<div class="card border-left-warning shadow h-100 py-2">
@@ -297,9 +297,16 @@ input:checked + .slider:before {
 									<div
 										class="text-xs font-weight-bold text-success text-uppercase mb-1">Estado</div>
 									<div class="h5 mb-0 font-weight-bold text-gray-800 ">
-										<label class="switch align-items-center">
-										  <input type="checkbox">
-										  <span class="slider round"></span>
+										<label class="switch align-items-center"> <c:set
+												var="active" value="${offer_list.offer_state}" /> <c:if
+												test="${active<1}">
+												<input type="checkbox" value="0">
+												<span class="slider round"></span>
+											</c:if> <c:if test="${active>0}">
+												<input type="checkbox" value="1" checked>
+												<span class="slider round"></span>
+											</c:if>
+
 										</label>
 									</div>
 								</div>
