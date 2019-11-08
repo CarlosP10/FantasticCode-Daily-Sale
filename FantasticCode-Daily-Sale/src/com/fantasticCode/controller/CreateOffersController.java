@@ -37,6 +37,7 @@ public class CreateOffersController {
     }
 	@RequestMapping(value = "/new_offer")
 	public ModelAndView GenerateNewOfferView() {
+		//CREAR SESION
 		ModelAndView mav = new ModelAndView();
 		List<Offer_type> offer_type_list = null;
 		try {
