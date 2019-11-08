@@ -57,7 +57,7 @@
 <h1>Listado Ofertas Registradas</h1>
 <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 <div class="btn-group" role="group" >
-<a class="btn btn-secondary" href=" ${pageContext.request.contextPath}/function/new	">Nueva Oferta</a>
+<a class="btn btn-secondary" href=" ${pageContext.request.contextPath}/admin/new_offer">Nueva Oferta</a>
 </div>
 <div class="btn-group align-rigth" role="group" aria-label="Button group with nested dropdown">
 		  <c:if test = "${pagina > 1}">
