@@ -118,7 +118,7 @@
 				</div>
 			</div>
 		</div>
-
+</div>
 		
 		<a href="${pageContext.request.contextPath}/show_offer"
 			class="boton boton-amarillo" style="display: block; margin-left: 100px;margin-right: 100px; margin-bottom: 30px; border-radius: 10px">Reservar</a>

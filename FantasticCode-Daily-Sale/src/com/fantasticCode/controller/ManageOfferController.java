@@ -52,6 +52,22 @@ public class ManageOfferController {
 		mav.setViewName("/admin/offers/view_offers");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/admin/delete_offer/{id}")
+	public ModelAndView DeleteOffer(@PathVariable(value = "id") int id) {
+		ModelAndView mav = new ModelAndView();
+		Offer offer = null;
+		try {
+			if (offerService.findOne(id) != null) {
+				offer = offerService.findOne(id);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		offerService.delete(offer);
+		mav.setViewName("redirect:/admin/view_offers");
+		return mav;
+	}
 
 	@RequestMapping(value = "/admin/view_offer/{id}"/* , method = RequestMethod.POST */)
 	public ModelAndView ViewOffer(@PathVariable(value = "id") int id) {
