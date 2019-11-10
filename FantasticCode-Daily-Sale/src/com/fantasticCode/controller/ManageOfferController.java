@@ -10,6 +10,7 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +22,7 @@ import com.fantasticCode.service.OfferService;
 import com.fantasticCode.service.Offer_type_Service;
 
 @Controller
-public class CreateOffersController {
+public class ManageOfferController {
 
 	@Autowired
 	private OfferService offerService;
@@ -51,6 +52,24 @@ public class CreateOffersController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/edit_offer/{id}")
+	public ModelAndView EditOfferView(@PathVariable(value="id") int id) {
+		ModelAndView mav = new ModelAndView();
+		Offer offer=null;
+		
+		List<Offer_type> offer_type_list = null;
+		try {
+			if (offer_type_Service.findAll() != null) offer_type_list = offer_type_Service.findAll();
+			
+			if (offer_type_Service.findAll() != null) offer=offerService.findOne(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		mav.addObject("offer", offer);
+		mav.addObject("offer_type_list", offer_type_list);
+		mav.setViewName("admin/admin-company/view_all2");
+		return mav;
+	}
 	@RequestMapping(value = "/save_new_offer", method = RequestMethod.POST)
 	public ModelAndView SaveOfferRedirection(@RequestParam String offername,
 			@RequestParam String description, @RequestParam String urlposter,
@@ -95,5 +114,51 @@ public class CreateOffersController {
 		mav.setViewName("redirect:/show_offers");
 		return mav;
 	}
-
+	
+	@RequestMapping(value = "/save_edit_offer/{id}", method = RequestMethod.POST)
+	public ModelAndView SaveEditOfferRedirection(@PathVariable(value="id") int id, @RequestParam String offername,
+			@RequestParam String description, @RequestParam String urlposter,
+			@RequestParam int availability,
+			@RequestParam String startdate,
+			@RequestParam String enddate,
+			@RequestParam String offer_code,
+			@RequestParam float price_range,
+			@RequestParam int type) {
+		
+		
+		ModelAndView mav = new ModelAndView();
+		Offer offer=new Offer();
+		offer.setOffername(offername);
+		offer.setDescription(description);
+		offer.setUrlposter(urlposter);
+		offer.setAvailability(availability);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date start_d = null;
+		Date end_d = null;
+		Date now=null;
+		String date=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+		try {
+			start_d = sdf.parse(startdate);
+			end_d = sdf.parse(enddate);
+			now=sdf.parse(date);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		offer.setIdoffer(id);
+		offer.setEnddate(end_d);
+		offer.setDuration(end_d.getTime()-start_d.getTime()+"");
+		offer.setOffer_code(offer_code);
+		offer.setOffer_state(1);
+		offer.setPrice_range(price_range);
+		offer.setCreation_date_hour(now);
+		//offer.setDuration(enddate.getTime()-startdate.getTime()+"");
+		offer.setType(offer_type_Service.findOne(type));
+		offerService.save(offer);
+		mav.setViewName("redirect:/edit_offers");
+		return mav;
+	}
+	
+	
 }
