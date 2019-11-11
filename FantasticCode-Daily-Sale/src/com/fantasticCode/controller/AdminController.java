@@ -13,15 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fantasticCode.dao.SaleDao;
-import com.fantasticCode.domain.Sale;
 
 
 @Controller
 public class AdminController {
 	
-	//@Autowired
-	SaleDao dao;
+
 	
 	@RequestMapping(value = "/index")
 	public ModelAndView initMain(HttpSession session) {

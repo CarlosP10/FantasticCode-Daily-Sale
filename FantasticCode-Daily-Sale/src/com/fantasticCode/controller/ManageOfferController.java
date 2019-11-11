@@ -160,7 +160,7 @@ public class ManageOfferController {
 		mav.setViewName("redirect:/admin/view_offers");
 		return mav;
 	}
-<<<<<<< HEAD
+
 	
 	@RequestMapping(value = "/save_edit_offer/{id}", method = RequestMethod.POST)
 	public ModelAndView SaveEditOfferRedirection(@PathVariable(value="id") int id, @RequestParam String offername,
@@ -207,8 +207,4 @@ public class ManageOfferController {
 		return mav;
 	}
 	
-	
-=======
-
->>>>>>> d75efd0416c9f704aa322bff72317a819e7005e1
 }
