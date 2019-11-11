@@ -1,10 +1,13 @@
 package com.fantasticCode.controller;
 
+import java.util.List;
 import java.util.logging.Logger;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,14 +20,23 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.fantasticCode.entities.Account;
 import com.fantasticCode.service.AccountService;
 
+import com.fantasticCode.entities.Offer;
+import com.fantasticCode.service.OfferService;
+
 @Controller
 public class MainController {
+	
+	@Autowired
+	private OfferService offerService;
+	
 	static Logger log = Logger.getLogger(MainController.class.getName());
+
 
 	@Autowired
 	private AccountService accountServ;
 	
 	
+
 	@RequestMapping(value = "/")
 	public ModelAndView initMain(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -48,6 +60,7 @@ public class MainController {
 		return mav;
 	}
 	
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam(value="username") String username,@RequestParam(value="password") String password, HttpServletRequest request, HttpServletResponse response, final RedirectAttributes redirectAttributes) {
 		System.out.println(username);
@@ -106,4 +119,21 @@ public class MainController {
 	
 	
 	
+
+  @RequestMapping(value = "/offer")
+  public ModelAndView offers() {
+	  ModelAndView mav = new ModelAndView();
+	  List<Offer> ofertas = null;
+	  try {
+		if(offerService.findAll() != null) {
+			ofertas = offerService.findAll();
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	  mav.addObject("ofertas", ofertas);
+	  mav.setViewName("public/offers");
+	  return mav;
+  }
+
 }
