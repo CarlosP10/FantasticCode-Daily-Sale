@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</header>
-	<form action="${pageContext.request.contextPath}/save_new_offer" method="post">
+	<form action="${pageContext.request.contextPath}/save_edit_offer/${offer.idoffer}" method="post">
 		<div class="anuncio">
 			<div class="card shadow mb-4"
 				style="margin-left: 100px; margin-right: 100px;">
@@ -47,20 +47,20 @@
 					<div class="form-group">
 						<label for="inputPoster">(URL)</label> <input type="text"
 							class="form-control" id="inputPoster" name="urlposter"
-							aria-describedby="posterHelp" required> <small
+							aria-describedby="posterHelp" required value="${offer.urlposter}"> <small
 							id="posterHelp" class="form-text text-muted">Ingresa la
 							url de la imagen relacionada a la oferta.</small>
 					</div>
 					<div class="form-group">
 						<label for="inputName">Nombre Oferta</label> <input type="text"
 							class="form-control" id="inputName" name="offername"
-							aria-describedby="nameHelp" required> <small
+							aria-describedby="nameHelp" required value="${offer.offername}"> <small
 							id="nameHelp" class="form-text text-muted">Ingrese el
 							nombre de la oferta.</small>
 					</div>
 					<div class="form-group">
 						<label for="offer_type_list">Tipo de Oferta</label> 
-						<select	id="offer_type_list" class="form-control" name="type" required>
+						<select	id="offer_type_list" class="form-control" name="type" required value="${offer.type}">
 
 							<c:forEach items="${offer_type_list}" var="offer_type_list">
 								<option value="${offer_type_list.idtype}">${offer_type_list.type}</option>
@@ -80,7 +80,7 @@
 					<div class="form-group">
 						<label for="inputName">Descripcion</label> <input type="text"
 							class="form-control" id="inputName" name="description"
-							aria-describedby="nameHelp" required> <small
+							aria-describedby="nameHelp" required value="${offer.description}"> <small
 							id="nameHelp" class="form-text text-muted">Ingrese
 							descripcion detallada de la oferta</small>
 					</div>
@@ -102,7 +102,7 @@
 										<div class="form-group">
 											<label for="inputName">Precio</label> <input type="number"
 												class="form-control" id="inputName" name="price_range"
-												aria-describedby="nameHelp" required> <small
+												aria-describedby="nameHelp" required value="${offer.price_range}"> <small
 												id="nameHelp" class="form-text text-muted">Ingrese
 												el precio de la oferta.</small>
 										</div>
@@ -128,7 +128,7 @@
 										<div class="form-group">
 											<label for="inputName">Limite de cupones</label> <input
 												type="number" class="form-control" id="inputName"
-												name="availability" aria-describedby="nameHelp" required>
+												name="availability" aria-describedby="nameHelp" required value="${offer.availability}">
 											<small id="nameHelp" class="form-text text-muted">Ingrese
 												la cantidad maxima de los cupones</small>
 										</div>
@@ -156,7 +156,7 @@
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
 												<div class="form-group">
 													<input type="date" class="form-control" id="fechainc"
-														min="2000-01-01" max="2100-12-31" name="startdate"> <small
+														min="2000-01-01" max="2100-12-31" name="startdate" required value="${offer.startdate}"> <small
 														id="nameHelp" class="form-text text-muted"
 										>Ingrese la fecha de inicio de la
 														oferta</small>
@@ -188,7 +188,7 @@
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
 												<div class="form-group">
 													<input type="date" class="form-control" id="fechainc"
-														min="2000-01-01" max="2100-12-31" name="enddate">
+														min="2000-01-01" max="2100-12-31" name="enddate" required value="${offer.enddate}">
 													<small id="nameHelp" class="form-text text-muted">Ingrese
 														la fecha de fin de la oferta</small>
 												</div>
@@ -215,7 +215,7 @@
 										class="text-xs font-weight-bold text-warning text-uppercase mb-1">Codigo</div>
 									<div class="h5 mb-0 font-weight-bold text-gray-800">
 										<input type="text" class="form-control" id="inputName"
-											name="offer_code" aria-describedby="nameHelp" required>
+											name="offer_code" aria-describedby="nameHelp" required value="${offer.offer_code}">
 									</div>
 								</div>
 								<div class="col-auto">

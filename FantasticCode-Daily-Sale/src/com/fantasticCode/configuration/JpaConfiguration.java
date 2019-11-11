@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableJpaRepositories(basePackages = "com.fantasticCode.repositories")
 public class JpaConfiguration {
-	
+
 	@Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -33,15 +33,15 @@ public class JpaConfiguration {
 		em.setDataSource(dataSource());
 		em.setPersistenceUnitName("software");
 		em.setPackagesToScan("com.fantasticCode.entities");
-		
+
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
 		em.setJpaProperties(hibernateProperties());
 		return em;
 	}
-	
+
 	@Bean
-	public DataSource dataSource(){
+	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
 		dataSource.setUrl("jdbc:postgresql://localhost:5432/FantasticCode");
@@ -50,12 +50,12 @@ public class JpaConfiguration {
 		dataSource.setPassword("root");
 		return dataSource;
 	}
-	
+
 	Properties hibernateProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.show_sql", "true");
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 		return properties;
-		
+
 	}
 }
