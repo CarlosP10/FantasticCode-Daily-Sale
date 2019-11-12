@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -198,8 +199,9 @@
 										<div class="col-auto">
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
 												<div class="form-group">
+												<fmt:formatDate pattern = "yyyy-MM-dd" value = "${offer.startdate}" var="theFormattedDate"/>
 													<input type="date" class="form-control" id="fechainc"
-														min="2000-01-01" max="2100-12-31" name="startdate" readonly value="${offer.startdate}"> <small
+														min="2000-01-01" max="2100-12-31" name="startdate" readonly value="${theFormattedDate}"> <small
 														id="nameHelp" class="form-text text-muted"
 										>Fecha de inicio de la
 														oferta</small>
@@ -230,8 +232,9 @@
 										<div class="col-auto">
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
 												<div class="form-group">
+												<fmt:formatDate pattern = "yyyy-MM-dd" value = "${offer.enddate}" var="theFormattedDate"/>
 													<input type="date" class="form-control" id="fechainc"
-														min="2000-01-01" max="2100-12-31" name="enddate" readonly value="${offer.enddate}">
+														min="2000-01-01" max="2100-12-31" name="enddate" readonly value="${theFormattedDate}">
 													<small id="nameHelp" class="form-text text-muted">Fecha de fin de la oferta</small>
 												</div>
 											</div>

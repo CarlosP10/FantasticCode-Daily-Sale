@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>   
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,8 +95,10 @@
 			<td>${offer_list.idoffer}</td>
 			<td>${offer_list.offername}</td>
 			<td>${offer_list.availability}</td>
-			<td>${offer_list.startdate }</td>
-			<td>${offer_list.enddate }</td>
+			<fmt:formatDate pattern = "yyyy-MM-dd" value = "${offer_list.startdate}" var="theFormattedDate"/>
+			<td>${theFormattedDate}</td>
+			<fmt:formatDate pattern = "yyyy-MM-dd" value = "${offer_list.enddate}" var="theFormattedDate"/>
+			<td>${theFormattedDate}</td>
 			<c:set var = "active" value = "${offer_list.offer_state}"/>
 			<c:if test = "${active<1}">
 			<td><a class="btn btn-danger btn-sm">Inactivo</a></td>
