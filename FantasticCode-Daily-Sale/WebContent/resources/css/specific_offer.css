@@ -1,3 +1,4 @@
+
 <!--
 ///////////////////////////////
 -->
@@ -37,12 +38,13 @@
 	padding: 20px 0;
 	font-size: 30px;
 }
-.img-header{
-/* Add the blur effect */
-  filter: blur(2px);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.img-header {
+	/* Add the blur effect */
+	filter: blur(2px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 <!--
@@ -72,8 +74,11 @@ body {
 	background-image: url("./resources/prism.png");
 }
 
-.imageOfferSpecific{
-	width:80%;
-	height:500px;
-	margin-left: 10%; margin-right: 30%; margin-bottom: 30px; border-radius: 10px
+.imageOfferSpecific {
+	width: 80%;
+	height: 500px;
+	margin-left: 10%;
+	margin-right: 30%;
+	margin-bottom: 30px;
+	border-radius: 10px
 }

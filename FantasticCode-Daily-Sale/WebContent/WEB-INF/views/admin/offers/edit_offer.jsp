@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -167,8 +167,8 @@
 														<div class="form-group">
 															<label for="inputName">Precio</label> <input
 																type="number" class="form-control" id="inputName"
-																name="price_range" min="0" aria-describedby="nameHelp" required
-																value="${offer.price_range}"> <small
+																name="price_range" min="0" aria-describedby="nameHelp"
+																required value="${offer.price_range}"> <small
 																id="nameHelp" class="form-text text-muted">Ingrese
 																el precio de la oferta.</small>
 														</div>
@@ -194,8 +194,8 @@
 														<div class="form-group">
 															<label for="inputName">Limite de cupones</label> <input
 																type="number" class="form-control" id="inputName"
-																name="availability" min="0" aria-describedby="nameHelp" required
-																value="${offer.availability}"> <small
+																name="availability" min="0" aria-describedby="nameHelp"
+																required value="${offer.availability}"> <small
 																id="nameHelp" class="form-text text-muted">Ingrese
 																la cantidad maxima de los cupones</small>
 														</div>
@@ -222,11 +222,13 @@
 														<div class="col-auto">
 															<div class="h5 mb-0 font-weight-bold text-gray-800">
 																<div class="form-group">
-																<fmt:formatDate pattern = "yyyy-MM-dd" value = "${offer.startdate}" var="theFormattedDate"/>
+																	<fmt:formatDate pattern="yyyy-MM-dd"
+																		value="${offer.startdate}" var="theFormattedDate" />
 																	<input type="date" class="form-control" id="fechainc"
 																		min="2019-01-01" max="2100-12-31" name="startdate"
-																		required value="${theFormattedDate}">
-																		<small id="nameHelp" class="form-text text-muted">Ingrese la fecha de inicio de la oferta</small>
+																		required value="${theFormattedDate}"> <small
+																		id="nameHelp" class="form-text text-muted">Ingrese
+																		la fecha de inicio de la oferta</small>
 																</div>
 															</div>
 														</div>
@@ -254,8 +256,9 @@
 														<div class="col-auto">
 															<div class="h5 mb-0 font-weight-bold text-gray-800">
 																<div class="form-group">
-																
-																<fmt:formatDate pattern = "yyyy-MM-dd" value = "${offer.enddate}" var="theFormattedDate"/>
+
+																	<fmt:formatDate pattern="yyyy-MM-dd"
+																		value="${offer.enddate}" var="theFormattedDate" />
 																	<input type="date" class="form-control" id="fechainc"
 																		min="2019-01-01" max="2100-12-31" name="enddate"
 																		required value="${theFormattedDate}"> <small

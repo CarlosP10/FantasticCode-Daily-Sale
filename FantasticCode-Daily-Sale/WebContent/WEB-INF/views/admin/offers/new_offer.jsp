@@ -145,9 +145,10 @@
 													<div class="h5 mb-0 font-weight-bold text-gray-800">
 														<div class="form-group">
 															<label for="inputName">Precio</label> <input
-																type="number" min="0" class="form-control" id="inputName"
-																name="price_range" aria-describedby="nameHelp" required>
-															<small id="nameHelp" class="form-text text-muted">Ingrese
+																type="number" min="0" class="form-control"
+																id="inputName" name="price_range"
+																aria-describedby="nameHelp" required> <small
+																id="nameHelp" class="form-text text-muted">Ingrese
 																el precio de la oferta.</small>
 														</div>
 													</div>
@@ -171,9 +172,10 @@
 													<div class="h5 mb-0 font-weight-bold text-gray-800">
 														<div class="form-group">
 															<label for="inputName">Limite de cupones</label> <input
-																type="number" min="0" class="form-control" id="inputName"
-																name="availability" aria-describedby="nameHelp" required>
-															<small id="nameHelp" class="form-text text-muted">Ingrese
+																type="number" min="0" class="form-control"
+																id="inputName" name="availability"
+																aria-describedby="nameHelp" required> <small
+																id="nameHelp" class="form-text text-muted">Ingrese
 																la cantidad maxima de los cupones</small>
 														</div>
 													</div>
@@ -201,7 +203,7 @@
 																<div class="form-group">
 																	<input type="date" class="form-control" id="fechainc"
 																		min="2019-01-01" max="2100-12-31" name="startdate">
-																		
+
 																	<small id="nameHelp" class="form-text text-muted">Ingrese
 																		la fecha de inicio de la oferta</small>
 																</div>
