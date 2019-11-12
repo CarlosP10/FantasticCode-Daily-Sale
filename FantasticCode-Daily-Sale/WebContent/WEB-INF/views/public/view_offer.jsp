@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,7 +95,9 @@
 								<div
 									class="text-xs font-weight-bold text-warning text-uppercase mb-1">Fecha
 									inicio</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800">${specific_offer.startdate}</div>
+								<fmt:formatDate pattern="yyyy-MM-dd"
+									value="${specific_offer.startdate}" var="theFormattedDate" />
+								<div class="h5 mb-0 font-weight-bold text-gray-800">${theFormattedDate}</div>
 							</div>
 							<div class="col-auto">
 								<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -112,7 +115,9 @@
 								<div
 									class="text-xs font-weight-bold text-warning text-uppercase mb-1">Fecha
 									Fin</div>
-								<div class="h5 mb-0 font-weight-bold text-gray-800">${specific_offer.enddate}</div>
+								<fmt:formatDate pattern="yyyy-MM-dd"
+									value="${specific_offer.enddate}" var="theFormattedDate" />
+								<div class="h5 mb-0 font-weight-bold text-gray-800">${theFormattedDate}</div>
 							</div>
 							<div class="col-auto">
 								<i class="fas fa-calendar fa-2x text-gray-300"></i>

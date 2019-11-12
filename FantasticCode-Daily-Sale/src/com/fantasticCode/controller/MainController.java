@@ -105,20 +105,5 @@ public class MainController {
 		return new ModelAndView("redirect:/");
 	}
 
-	@RequestMapping(value = "/offer")
-	public ModelAndView offers() {
-		ModelAndView mav = new ModelAndView();
-		List<Offer> ofertas = null;
-		try {
-			if (offerService.findAll() != null) {
-				ofertas = offerService.findAll();
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		mav.addObject("ofertas", ofertas);
-		mav.setViewName("public/offers");
-		return mav;
-	}
 
 }
