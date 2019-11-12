@@ -47,7 +47,7 @@ public class MainController {
 				
 				
 				if((Integer)session.getAttribute("role")==1) {
-					mav.setViewName("redirect:/index");
+					mav.setViewName("redirect:/admin/view_offers");
 				}else {
 					mav.setViewName("redirect:/show_offers");
 				}
@@ -86,7 +86,7 @@ public class MainController {
 				System.out.println(session.getAttribute("role"));
 				
 				if(account.getRole().getIdrole()==1) {
-					mav.setViewName("redirect:/index");
+					mav.setViewName("redirect:/admin/view_offers");
 				}else {
 					mav.setViewName("redirect:/show_offers");
 				}
