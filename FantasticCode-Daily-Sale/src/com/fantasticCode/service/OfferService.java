@@ -6,6 +6,8 @@ import org.springframework.dao.DataAccessException;
 
 import com.fantasticCode.entities.Offer;
 
+//interfaz de ofertas (manipulacion)
+
 public interface OfferService {
 	public List<Offer> findAll(int page);
 	public List<Offer> findAll();

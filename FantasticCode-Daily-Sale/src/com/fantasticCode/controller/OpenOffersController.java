@@ -11,6 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fantasticCode.entities.Offer;
 import com.fantasticCode.service.OfferService;
 
+//contolador para mostrar las ofertas
+//el primer mapping es para mostrarlas en general
+//el segundo mapping es para mostrarlas por id
 
 @Controller
 public class OpenOffersController {

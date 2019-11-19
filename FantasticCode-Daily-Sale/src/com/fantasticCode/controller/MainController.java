@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fantasticCode.entities.Offer;
 import com.fantasticCode.service.OfferService;
 
+//controladores para manipular la url
+
 @Controller
 public class MainController {
 	
@@ -19,12 +21,16 @@ public class MainController {
 	
 	static Logger log = Logger.getLogger(MainController.class.getName());
 
+	//controlador para acceder al login
+	
 	@RequestMapping(value = "/")
 	public ModelAndView initMain() {
 		ModelAndView mav = new ModelAndView();
 			mav.setViewName("user/login");
 		return mav;
 	}
+	
+	//controlador para acceder a las ofertas
 	
   @RequestMapping(value = "/offer")
   public ModelAndView offers() {

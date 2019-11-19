@@ -21,6 +21,8 @@ import com.fantasticCode.entities.Offer_type;
 import com.fantasticCode.service.OfferService;
 import com.fantasticCode.service.Offer_type_Service;
 
+//aca estan todos los controladores para acceder a todas las partes de la pagina web
+
 @Controller
 public class ManageOfferController {
 
@@ -37,6 +39,8 @@ public class ManageOfferController {
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true));
 	}
 
+	//controlador de ver ofertas (administrador)
+	
 	@RequestMapping(value = "/admin/view_offers")
 	public ModelAndView ViewOffers() {
 		ModelAndView mav = new ModelAndView();
@@ -53,6 +57,9 @@ public class ManageOfferController {
 		return mav;
 	}
 	
+	//controlador de eliminar ofertas (administrador)
+
+	
 	@RequestMapping(value = "/admin/delete_offer/{id}")
 	public ModelAndView DeleteOffer(@PathVariable(value = "id") int id) {
 		ModelAndView mav = new ModelAndView();
@@ -68,6 +75,9 @@ public class ManageOfferController {
 		mav.setViewName("redirect:/admin/view_offers");
 		return mav;
 	}
+	
+	//controlador de ver ofertas por id (administrador)
+
 
 	@RequestMapping(value = "/admin/view_offer/{id}"/* , method = RequestMethod.POST */)
 	public ModelAndView ViewOffer(@PathVariable(value = "id") int id) {
@@ -82,6 +92,9 @@ public class ManageOfferController {
 		mav.setViewName("admin/offers/view_offer");
 		return mav;
 	}
+	
+	//controlador de crear ofertas (administrador)
+
 
 	@RequestMapping(value = "/admin/new_offer")
 	public ModelAndView GenerateNewOfferView() {
@@ -99,6 +112,9 @@ public class ManageOfferController {
 		return mav;
 	}
 
+	//controlador de editar ofertas (administrador)
+
+	
 	@RequestMapping(value = "/admin/edit_offer/{id}")
 	public ModelAndView EditOfferView(@PathVariable(value = "id") int id) {
 		ModelAndView mav = new ModelAndView();
@@ -120,6 +136,9 @@ public class ManageOfferController {
 		return mav;
 	}
 
+	//controlador para guardar ofertas (administrador)
+
+	
 	@RequestMapping(value = "/admin/save_new_offer", method = RequestMethod.POST)
 	public ModelAndView SaveOfferRedirection(@RequestParam String offername, @RequestParam String description,
 			@RequestParam String urlposter, @RequestParam int availability, @RequestParam String startdate,
@@ -160,7 +179,9 @@ public class ManageOfferController {
 		mav.setViewName("redirect:/admin/view_offers");
 		return mav;
 	}
-<<<<<<< HEAD
+
+	//controlador para guardar las ofertas modificadas (administrador)
+
 	
 	@RequestMapping(value = "/save_edit_offer/{id}", method = RequestMethod.POST)
 	public ModelAndView SaveEditOfferRedirection(@PathVariable(value="id") int id, @RequestParam String offername,
@@ -207,8 +228,5 @@ public class ManageOfferController {
 		return mav;
 	}
 	
-	
-=======
 
->>>>>>> d75efd0416c9f704aa322bff72317a819e7005e1
 }
