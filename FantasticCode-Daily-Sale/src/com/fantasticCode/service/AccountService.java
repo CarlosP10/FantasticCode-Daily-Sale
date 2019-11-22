@@ -6,6 +6,8 @@ import org.springframework.dao.DataAccessException;
 
 import com.fantasticCode.entities.Account;
 
+//interfaz de usuario (cuenta del admin) 
+//todas las cosas que podra realizar
 
 public interface AccountService {
 	public List<Account> findAll(int page);

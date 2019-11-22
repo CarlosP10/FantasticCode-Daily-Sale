@@ -10,11 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fantasticCode.entities.Account;
 import com.fantasticCode.service.AccountService;
 
+//se utilizan de forma adecuada los controladores 
 @Controller
 public class ManageAccountController {
 
 	@Autowired
-	private AccountService accountService;
+	private AccountService accountService; //inicializando
 
 	@RequestMapping("account/list")
 	public ModelAndView vertodos() throws Exception {
