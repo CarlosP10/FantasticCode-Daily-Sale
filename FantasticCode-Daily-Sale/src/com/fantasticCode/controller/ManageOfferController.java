@@ -181,7 +181,6 @@ public class ManageOfferController {
 	}
 
 	//controlador para guardar las ofertas modificadas (administrador)
-
 	
 	@RequestMapping(value = "/save_edit_offer/{id}", method = RequestMethod.POST)
 	public ModelAndView SaveEditOfferRedirection(@PathVariable(value="id") int id, @RequestParam String offername,
@@ -228,5 +227,4 @@ public class ManageOfferController {
 		return mav;
 	}
 	
-
 }

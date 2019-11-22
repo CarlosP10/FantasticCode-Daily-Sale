@@ -30,24 +30,24 @@
 		</header>
 
 		<main class="seccion contenedor">
-			<h2 class="fw-300 centrar-texto">OFERTAS DEL DÍA</h2>
-			<div class="contenedor-anuncios">
-				<div class="anuncio">
-					<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
-					<c:forEach items="${ofertas}" var="ofertas">
-						<c:set var="active" value="${ofertas.offer_state}" />
-						<c:if test="${active>0}">
-							<div class="contenido-anuncio">
-								<h3>${ofertas.offername }</h3>
-								<p>${ofertas.description }</p>
-								<a href="${pageContext.request.contextPath}/show_offer/1"
-									class="boton boton-amarillo d-block">Ver Información</a>
-							</div>
-						</c:if>
-					</c:forEach>
-				</div>
-
+		<h2 class="fw-300 centrar-texto">OFERTAS DEL DÍA</h2>
+		<div class="contenedor-anuncios">
+			<div class="anuncio">
+				<img alt="Anuncio 1" src="./resources/img/anuncio1.jpg">
+				<c:forEach items="${ofertas}" var="ofertas">
+					<c:set var="active" value="${ofertas.offer_state}" />
+					<c:if test="${active>0}">
+						<div class="contenido-anuncio">
+							<h3>${ofertas.offername }</h3>
+							<p>${ofertas.description }</p>
+							<a href="${pageContext.request.contextPath}/show_offer/1"
+								class="boton boton-amarillo d-block">Ver Información</a>
+						</div>
+					</c:if>
+				</c:forEach>
 			</div>
+
+		</div>
 		</main>
 	</form>
 	>

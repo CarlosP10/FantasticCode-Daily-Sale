@@ -2,19 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Ver Todos</title>
 <!-- Custom fonts for this template-->
-<link href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css"
+<link
+	href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
 
 <!-- Page level plugin CSS-->
-<link href="${pageContext.request.contextPath}/resources/vendor/datatables/dataTables.bootstrap4.css"
+<link
+	href="${pageContext.request.contextPath}/resources/vendor/datatables/dataTables.bootstrap4.css"
 	rel="stylesheet">
-	<link href="../resources/css/bootstrap.css" media="all" type="text/css"
+<link href="../resources/css/bootstrap.css" media="all" type="text/css"
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -47,7 +50,9 @@
 	crossorigin="anonymous"></script>
 
 <!-- Custom styles for this template-->
-<link href="${pageContext.request.contextPath}/resources/css/sb-admin.css" rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/resources/css/sb-admin.css"
+	rel="stylesheet">
 </head>
 <body id="page-top">
 
@@ -77,7 +82,7 @@
 				href="${pageContext.request.contextPath}/admin/view_offers"> <i
 					class="fas fa-fw fa-users"></i> <span>Ofertas</span>
 			</a></li>
-			
+
 		</ul>
 
 		<div id="content-wrapper">
@@ -86,198 +91,217 @@
 				<!-- DataTables Example -->
 				<div
 					class="col-sm-10 col-md-10 col-lg-10 offset-sm-1 offset-md-1 offset-lg-1">
-					
-<!-- 					AQUIII TIENE QUE IR EL CONTENIDO -->
 
-<form action="${pageContext.request.contextPath}/admin/view_offers" method="post">
-		<div class="anuncio">
-			<div class="card shadow mb-4"
-				style="margin-left: 100px; margin-right: 100px;">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">Informacion
-						general</h6>
-				</div>
-				<div class="card-body">
-					<div class="form-group">
-					<img alt="Anuncio 1" src="${offer.urlposter}">
-						<label for="inputPoster">(URL)</label> <input type="text"
-							class="form-control" id="inputPoster" name="urlposter"
-							aria-describedby="posterHelp" value="${offer.urlposter}" readonly> <small
-							id="posterHelp" class="form-text text-muted">Url de la imagen relacionada a la oferta.</small>
-					</div>
-					<div class="form-group">
-						<label for="inputName">Nombre Oferta</label> <input type="text"
-							class="form-control" id="inputName" name="offername"
-							aria-describedby="nameHelp" required value="${offer.offername}" readonly> <small
-							id="nameHelp" class="form-text text-muted">Nombre de la oferta.</small>
-					</div>
-					<div class="form-group">
-						<label for="offer_type_list">Tipo de Oferta</label> 
-						<input type="text" class="form-control" readonly value="${offer.type.type}">
-					</div>
-				</div>
-			</div>
-			<div class="card shadow mb-4"
-				style="margin-left: 100px; margin-right: 100px;">
-				<div class="card-header py-3">
-					<h6 class="m-0 font-weight-bold text-primary">Descripcion de
-						la oferta</h6>
-				</div>
-				<div class="card-body">
-					<div class="form-group">
-						<label for="inputName">Descripcion</label> <input type="text" class="form-control" aria-describedby="nameHelp" readonly value="${offer.description}"> <small
-							id="nameHelp" class="form-text text-muted"></small>
-					</div>
-				</div>
-			</div>
+					<!-- 					AQUIII TIENE QUE IR EL CONTENIDO -->
 
-			<div class="row" style="margin-left: 90px; margin-right: 90px">
-
-				<!-- Earnings (Monthly) Card Example -->
-				<div class="col-xl-3 col-md-6 mb-4">
-					<div class="card border-left-primary shadow h-100 py-2">
-						<div class="card-body">
-							<div class="row no-gutters align-items-center">
-								<div class="col mr-2">
-									<div
-										class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-										Precio</div>
-									<div class="h5 mb-0 font-weight-bold text-gray-800">
-										<div class="form-group">
-											<label for="inputName">Precio</label> <input type="number"
-												class="form-control" id="inputName" name="price_range"
-												aria-describedby="nameHelp" readonly value="${offer.price_range}"> <small
-												id="nameHelp" class="form-text text-muted">
-												Precio de la oferta.</small>
-										</div>
+					<form action="${pageContext.request.contextPath}/admin/view_offers"
+						method="post">
+						<div class="anuncio">
+							<div class="card shadow mb-4"
+								style="margin-left: 100px; margin-right: 100px;">
+								<div class="card-header py-3">
+									<h6 class="m-0 font-weight-bold text-primary">Informacion
+										general</h6>
+								</div>
+								<div class="card-body">
+									<div class="form-group">
+										<img alt="Anuncio 1" src="${offer.urlposter}"> <label
+											for="inputPoster">(URL)</label> <input type="text"
+											class="form-control" id="inputPoster" name="urlposter"
+											aria-describedby="posterHelp" value="${offer.urlposter}"
+											readonly> <small id="posterHelp"
+											class="form-text text-muted">Url de la imagen
+											relacionada a la oferta.</small>
+									</div>
+									<div class="form-group">
+										<label for="inputName">Nombre Oferta</label> <input
+											type="text" class="form-control" id="inputName"
+											name="offername" aria-describedby="nameHelp" required
+											value="${offer.offername}" readonly> <small
+											id="nameHelp" class="form-text text-muted">Nombre de
+											la oferta.</small>
+									</div>
+									<div class="form-group">
+										<label for="offer_type_list">Tipo de Oferta</label> <input
+											type="text" class="form-control" readonly
+											value="${offer.type.type}">
 									</div>
 								</div>
-								<div class="col-auto">
-									<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Earnings (Monthly) Card Example -->
-				<div class="col-xl-3 col-md-6 mb-4">
-					<div class="card border-left-success shadow h-100 py-2">
-						<div class="card-body">
-							<div class="row no-gutters align-items-center">
-								<div class="col mr-2">
-									<div
-										class="text-xs font-weight-bold text-success text-uppercase mb-1">Disponibilidad</div>
-									<div class="h5 mb-0 font-weight-bold text-gray-800">
-										<div class="form-group">
-											<label for="inputName">Limite de cupones</label> <input
-												type="number" class="form-control" id="inputName"
-												name="availability" aria-describedby="nameHelp" readonly value="${offer.availability}">
-											<small id="nameHelp" class="form-text text-muted">Cantidad disponible de los cupones</small>
-										</div>
+							<div class="card shadow mb-4"
+								style="margin-left: 100px; margin-right: 100px;">
+								<div class="card-header py-3">
+									<h6 class="m-0 font-weight-bold text-primary">Descripcion
+										de la oferta</h6>
+								</div>
+								<div class="card-body">
+									<div class="form-group">
+										<label for="inputName">Descripcion</label> <input type="text"
+											class="form-control" aria-describedby="nameHelp" readonly
+											value="${offer.description}"> <small id="nameHelp"
+											class="form-text text-muted"></small>
 									</div>
 								</div>
-								<div class="col-auto">
-									<i class="fas fa-comments fa-2x text-gray-300"></i>
-								</div>
 							</div>
-						</div>
-					</div>
-				</div>
 
-				<!-- Earnings (Monthly) Card Example -->
-				<div class="col-xl-3 col-md-6 mb-4">
-					<div class="card border-left-info shadow h-100 py-2">
-						<div class="card-body">
-							<div class="row no-gutters align-items-center">
-								<div class="col mr-2">
-									<div
-										class="text-xs font-weight-bold text-info text-uppercase mb-1">Fecha
-										Inicio</div>
-									<div class="row no-gutters align-items-center">
-										<div class="col-auto">
-											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												<div class="form-group">
-													<input type="date" class="form-control" id="fechainc"
-														min="2000-01-01" max="2100-12-31" name="startdate" readonly value="${offer.startdate}"> <small
-														id="nameHelp" class="form-text text-muted"
-										>Fecha de inicio de la
-														oferta</small>
+							<div class="row" style="margin-left: 90px; margin-right: 90px">
+
+								<!-- Earnings (Monthly) Card Example -->
+								<div class="col-xl-3 col-md-6 mb-4">
+									<div class="card border-left-primary shadow h-100 py-2">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<div
+														class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+														Precio</div>
+													<div class="h5 mb-0 font-weight-bold text-gray-800">
+														<div class="form-group">
+															<label for="inputName">Precio</label> <input
+																type="number" class="form-control" id="inputName"
+																name="price_range" aria-describedby="nameHelp" readonly
+																value="${offer.price_range}"> <small
+																id="nameHelp" class="form-text text-muted">
+																Precio de la oferta.</small>
+														</div>
+													</div>
+												</div>
+												<div class="col-auto">
+													<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
 												</div>
 											</div>
 										</div>
-
 									</div>
 								</div>
-								<div class="col-auto">
-									<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<!-- Earnings (Monthly) Card Example -->
-				<div class="col-xl-3 col-md-6 mb-4">
-					<div class="card border-left-info shadow h-100 py-2">
-						<div class="card-body">
-							<div class="row no-gutters align-items-center">
-								<div class="col mr-2">
-									<div
-										class="text-xs font-weight-bold text-info text-uppercase mb-1">Fecha
-										Fin</div>
-									<div class="row no-gutters align-items-center">
-										<div class="col-auto">
-											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												<div class="form-group">
-													<input type="date" class="form-control" id="fechainc"
-														min="2000-01-01" max="2100-12-31" name="enddate" readonly value="${offer.enddate}">
-													<small id="nameHelp" class="form-text text-muted">Fecha de fin de la oferta</small>
+								<!-- Earnings (Monthly) Card Example -->
+								<div class="col-xl-3 col-md-6 mb-4">
+									<div class="card border-left-success shadow h-100 py-2">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<div
+														class="text-xs font-weight-bold text-success text-uppercase mb-1">Disponibilidad</div>
+													<div class="h5 mb-0 font-weight-bold text-gray-800">
+														<div class="form-group">
+															<label for="inputName">Limite de cupones</label> <input
+																type="number" class="form-control" id="inputName"
+																name="availability" aria-describedby="nameHelp" readonly
+																value="${offer.availability}"> <small
+																id="nameHelp" class="form-text text-muted">Cantidad
+																disponible de los cupones</small>
+														</div>
+													</div>
+												</div>
+												<div class="col-auto">
+													<i class="fas fa-comments fa-2x text-gray-300"></i>
 												</div>
 											</div>
 										</div>
-
 									</div>
 								</div>
-								<div class="col-auto">
-									<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<!-- Pending Requests Card Example -->
-				<div class="col-xl-3 col-md-6 mb-4">
-					<div class="card border-left-warning shadow h-100 py-2">
-						<div class="card-body">
-							<div class="row no-gutters align-items-center">
-								<div class="col mr-2">
-									<div
-										class="text-xs font-weight-bold text-warning text-uppercase mb-1">Codigo</div>
-									<div class="h5 mb-0 font-weight-bold text-gray-800">
-										<input type="text" class="form-control" id="inputName"
-											name="offer_code" aria-describedby="nameHelp" readonly value="${offer.offer_code}">
+								<!-- Earnings (Monthly) Card Example -->
+								<div class="col-xl-3 col-md-6 mb-4">
+									<div class="card border-left-info shadow h-100 py-2">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<div
+														class="text-xs font-weight-bold text-info text-uppercase mb-1">Fecha
+														Inicio</div>
+													<div class="row no-gutters align-items-center">
+														<div class="col-auto">
+															<div class="h5 mb-0 font-weight-bold text-gray-800">
+																<div class="form-group">
+																	<fmt:formatDate pattern="yyyy-MM-dd"
+																		value="${offer.startdate}" var="theFormattedDate" />
+																	<input type="date" class="form-control" id="fechainc"
+																		min="2000-01-01" max="2100-12-31" name="startdate"
+																		readonly value="${theFormattedDate}"> <small
+																		id="nameHelp" class="form-text text-muted">Fecha
+																		de inicio de la oferta</small>
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+												<div class="col-auto">
+													<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="col-auto">
-									<i class="fas fa-qrcode fa-2x text-gray-300"></i>
+
+								<!-- Earnings (Monthly) Card Example -->
+								<div class="col-xl-3 col-md-6 mb-4">
+									<div class="card border-left-info shadow h-100 py-2">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<div
+														class="text-xs font-weight-bold text-info text-uppercase mb-1">Fecha
+														Fin</div>
+													<div class="row no-gutters align-items-center">
+														<div class="col-auto">
+															<div class="h5 mb-0 font-weight-bold text-gray-800">
+																<div class="form-group">
+																	<fmt:formatDate pattern="yyyy-MM-dd"
+																		value="${offer.enddate}" var="theFormattedDate" />
+																	<input type="date" class="form-control" id="fechainc"
+																		min="2000-01-01" max="2100-12-31" name="enddate"
+																		readonly value="${theFormattedDate}"> <small
+																		id="nameHelp" class="form-text text-muted">Fecha
+																		de fin de la oferta</small>
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+												<div class="col-auto">
+													<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
+
+								<!-- Pending Requests Card Example -->
+								<div class="col-xl-3 col-md-6 mb-4">
+									<div class="card border-left-warning shadow h-100 py-2">
+										<div class="card-body">
+											<div class="row no-gutters align-items-center">
+												<div class="col mr-2">
+													<div
+														class="text-xs font-weight-bold text-warning text-uppercase mb-1">Codigo</div>
+													<div class="h5 mb-0 font-weight-bold text-gray-800">
+														<input type="text" class="form-control" id="inputName"
+															name="offer_code" aria-describedby="nameHelp" readonly
+															value="${offer.offer_code}">
+													</div>
+												</div>
+												<div class="col-auto">
+													<i class="fas fa-qrcode fa-2x text-gray-300"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
 							</div>
+
+
+							<button type="submit" class="btn-outline-success btn "
+								value="Regresar"
+								style="width: 500px; margin-right: 100px; margin-left: 100px">Regresar</button>
+
 						</div>
-					</div>
-				</div>
 
-
-			</div>
-
-			
-			<button type="submit" class="btn-outline-success btn " value="Regresar"
-				style="width: 500px; margin-right: 100px; margin-left: 100px">Regresar</button>
-
-		</div>
-
-	</form>
+					</form>
 
 				</div>
 
