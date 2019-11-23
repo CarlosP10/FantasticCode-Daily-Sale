@@ -59,14 +59,6 @@ public class MainController {
 	}
 	
 	//controlador para acceder a las ofertas
-	
-  @RequestMapping(value = "/offer")
-  public ModelAndView offers() {
-	  ModelAndView mav = new ModelAndView();
-	  List<Offer> ofertas = null;
-	  try {
-		if(offerService.findAll() != null) {
-			ofertas = offerService.findAll();
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam(value = "username") String username,
