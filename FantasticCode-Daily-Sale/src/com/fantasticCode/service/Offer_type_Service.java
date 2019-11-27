@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fantasticCode.entities.Offer_type;
 
+//interfaz del tipo de oferta (manipulacion)
 
 public interface Offer_type_Service {
 	public List<Offer_type> findAll(int page);

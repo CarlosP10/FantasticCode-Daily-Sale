@@ -20,6 +20,8 @@ import com.fantasticCode.entities.Offer;
 import com.fantasticCode.service.AccountService;
 import com.fantasticCode.service.OfferService;
 
+//controladores para manipular la url
+
 @Controller
 public class MainController {
 
@@ -28,6 +30,9 @@ public class MainController {
 
 	static Logger log = Logger.getLogger(MainController.class.getName());
 
+
+	//controlador para acceder al login
+	
 	@Autowired
 	private AccountService accountServ;
 
@@ -52,6 +57,7 @@ public class MainController {
 
 		return mav;
 	}
+	
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam(value = "username") String username,
@@ -105,5 +111,21 @@ public class MainController {
 		return new ModelAndView("redirect:/");
 	}
 
+	//controlador para acceder a las ofertas
+	@RequestMapping(value = "/offer")
+	public ModelAndView offers() {
+		ModelAndView mav = new ModelAndView();
+		List<Offer> ofertas = null;
+		try {
+			if (offerService.findAll() != null) {
+				ofertas = offerService.findAll();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		mav.addObject("ofertas", ofertas);
+		mav.setViewName("public/offers");
+		return mav;
+	}
 
 }
