@@ -313,15 +313,7 @@
 														<label class="switch align-items-center"> <input
 															type="checkbox" name="offer_state" value="1"
 															style="color: #428bca;"> <input type="hidden"
-															name="offer_state" value="0"> <%-- <c:set var="active" value="${offer.offer_state}" /> 
-														<c:if test="${active<1}">
-															<input type="checkbox" name="offer_state" value="0">
-															<span class="slider round"></span>
-															</c:if> <c:if test="${active>0}">
-																<input type="checkbox" name="offer_state" value="1" checked>
-																<span class="slider round"></span>
-															</c:if>
-														--%>
+															name="offer_state" value="0">
 														</label>
 													</div>
 												</div>
