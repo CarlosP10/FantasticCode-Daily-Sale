@@ -1,5 +1,7 @@
 package com.fantasticCode.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,15 @@ public class OpenOffersController {
 	@RequestMapping(value = "/show_offers")
 	public ModelAndView GeneralOffers() {
 		ModelAndView mav = new ModelAndView();
+		List<Offer> ofertas = null;
+		try {
+			if (offerservice.findAll() != null) {
+				ofertas = offerservice.findAll();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		mav.addObject("ofertas", ofertas);
 			mav.setViewName("public/offers");
 		return mav;
 	}
