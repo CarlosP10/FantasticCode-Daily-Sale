@@ -15,11 +15,15 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+//Habilita el manejo de transacciones
 @EnableTransactionManagement
+//Indica que es una clase de configuracion.
 @Configuration
+//Permite e indica el uso de repositorios en su paquete respectivo.
 @EnableJpaRepositories(basePackages = "com.fantasticCode.repositories")
 public class JpaConfiguration {
-
+	// Metodo que se encarga de las transacciones con la base de datos de
+	// postgresql.
 	@Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -27,6 +31,7 @@ public class JpaConfiguration {
 		return transactionManager;
 	}
 
+	// Bean que permite las persistenica y propiedades de JPA
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
@@ -40,17 +45,19 @@ public class JpaConfiguration {
 		return em;
 	}
 
+	// Bean para hacer la conexion con la base de datos FantasticCode montada en
+	// postgresql
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
 		dataSource.setUrl("jdbc:postgresql://localhost:5432/FantasticCode");
-
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("root");
 		return dataSource;
 	}
 
+	// Propiedades de sql.
 	Properties hibernateProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.show_sql", "true");

@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,36 +16,36 @@ import javax.persistence.TemporalType;
 @Table(schema = "public", name = "table_user")
 public class User {
 	@Id
-	@GeneratedValue(generator="user_seq", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "user_seq", sequenceName = "public.user_seq",allocationSize=1)
+	@GeneratedValue(generator = "user_seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "user_seq", sequenceName = "public.user_seq", allocationSize = 1)
 	@Column(name = "id_user")
 	private Integer iduser;
-	
+
 	@Column(name = "name")
 	private String name;
-		
+
 	@Column(name = "u_lastname")
 	private String ulastname;
-	
+
 	@Column(name = "u_birthdate")
 	private String ubirthdate;
-	
+
 	@Column(name = "country")
 	private String country;
-	
+
 	@Column(name = "municipality")
 	private String municipality;
-	
+
 	@Column(name = "address")
 	private String address;
 
 	@Column(name = "creation_date_hour")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creation_date_hour;
-	
+
 	@Column(name = "c_contact")
 	private String contact;
-	
+
 	@Column(name = "c_description")
 	private String description;
 
@@ -147,5 +148,5 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-		
+
 }

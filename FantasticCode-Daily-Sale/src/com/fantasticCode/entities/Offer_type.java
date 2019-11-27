@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,10 +11,9 @@ public class Offer_type {
 	@Id
 	@Column(name = "id_type")
 	private Integer idtype;
-	
+
 	@Column(name = "type")
 	private String type;
-	
 
 	public Integer getIdtype() {
 		return idtype;
@@ -42,12 +42,4 @@ public class Offer_type {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-
-
-
-	
-	
-	
 }

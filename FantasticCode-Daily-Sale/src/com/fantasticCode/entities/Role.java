@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +11,7 @@ public class Role {
 	@Id
 	@Column(name = "id_role")
 	private Integer idrole;
-	
+
 	@Column(name = "role")
 	private String role;
 
@@ -41,6 +42,4 @@ public class Role {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	
 }

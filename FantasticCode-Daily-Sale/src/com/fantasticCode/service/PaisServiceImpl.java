@@ -10,17 +10,13 @@ import com.fantasticCode.repositories.PaisRepository;
 
 @Service
 public class PaisServiceImpl implements PaisService {
-	
+
 	@Autowired
-	PaisRepository paisRepository ;
-	
-	
+	PaisRepository paisRepository;
 
 	public List<Paises> findAll() {
 		// TODO Auto-generated method stub
 		return paisRepository.findAll();
 	}
-	
 
-	
 }

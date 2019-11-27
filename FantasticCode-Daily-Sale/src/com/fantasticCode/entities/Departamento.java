@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +11,7 @@ public class Departamento {
 	@Id
 	@Column(name = "id")
 	private Integer idpais;
-	
+
 	@Column(name = "departamento")
 	private String departamento;
 
@@ -40,9 +41,5 @@ public class Departamento {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
-	
-	
 }

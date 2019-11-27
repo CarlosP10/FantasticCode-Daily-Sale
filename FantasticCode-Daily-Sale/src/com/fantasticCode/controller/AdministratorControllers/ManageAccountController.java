@@ -1,4 +1,4 @@
-package com.fantasticCode.controller;
+package com.fantasticCode.controller.AdministratorControllers;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import com.fantasticCode.service.AccountService;
 public class ManageAccountController {
 
 	@Autowired
-	private AccountService accountService; //inicializando
+	private AccountService accountService; // inicializando
 
 	@RequestMapping("account/list")
 	public ModelAndView vertodos() throws Exception {
@@ -23,7 +23,6 @@ public class ManageAccountController {
 		int pagina = 0;
 		List<Account> accounts = null;
 		accounts = accountService.findAll(pagina);
-		System.out.println("El tama�� es:" + accounts.size());
 		mav.addObject("accounts", accounts);
 		mav.addObject("actual", Math.min((pagina + 1) * 10, accountService.countAll()));
 		mav.addObject("total", accountService.countAll());

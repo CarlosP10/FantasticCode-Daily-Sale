@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,16 +11,16 @@ public class Paises {
 	@Id
 	@Column(name = "id")
 	private Integer idpais;
-	
+
 	@Column(name = "code")
 	private String code;
-	
+
 	@Column(name = "iso3166a1")
 	private String iso1;
 
 	@Column(name = "iso3166a2")
 	private String iso2;
-	
+
 	@Column(name = "nombre")
 	private String name;
 
@@ -77,7 +78,4 @@ public class Paises {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	
 }

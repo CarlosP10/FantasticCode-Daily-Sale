@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,32 +19,30 @@ import javax.persistence.TemporalType;
 @Table(schema = "public", name = "table_account")
 public class Account {
 	@Id
-	@GeneratedValue(generator="account_seq", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "account_seq", sequenceName = "public.account_seq",allocationSize=1)
+	@GeneratedValue(generator = "account_seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "account_seq", sequenceName = "public.account_seq", allocationSize = 1)
 	@Column(name = "id_account")
 	private Integer idaccount;
-	
-	
+
 	@Column(name = "username")
 	private String username;
-	
+
 	@Column(name = "password")
 	private String password;
-	
+
 	@Column(name = "active_state")
 	private int activestate;
-	
+
 	@Column(name = "online_status")
 	private int onlinestatus;
 
 	@Column(name = "comment")
 	private String comment;
 
-	
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_role", referencedColumnName = "id_role")
 	private Role role;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_user", referencedColumnName = "id_user")
 	private User user;
@@ -51,7 +50,7 @@ public class Account {
 	@Column(name = "creation_date_hour")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creation_date_hour;
-	
+
 	public Integer getIdaccount() {
 		return idaccount;
 	}
@@ -143,8 +142,4 @@ public class Account {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	
-	
 }
