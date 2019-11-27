@@ -127,33 +127,53 @@ a:hover {
 }
 
 a
+
+
 :not
+
  
+
 (
 [
 href
 ]
+
  
+
 )
 :not
+
  
+
 (
 [
 tabindex
 ]
+
  
+
 ){
 color
-:
- 
-inherit
-;
 
-	
-text-decoration
+
 :
+
  
+
+inherit
+
+
+;
+text-decoration
+
+
+:
+
+ 
+
 none
+
+
 
 
 }
@@ -251,46 +271,76 @@ type
 =
 button
 ]
+
+
 :not
+
  
+
 (
 :disabled
+
  
+
 ),
 [
 type
 =
 reset
 ]
+
+
 :not
+
  
+
 (
 :disabled
+
  
+
 ),
 [
 type
 =
 submit
 ]
+
+
 :not
 
+
 	
+
 (
 :disabled
+
  
+
 ),
 button
+
+
 :not
+
  
+
 (
 :disabled
+
  
+
 ){
 cursor
+
+
 :
+
  
+
 pointer
+
+
 
 
 }

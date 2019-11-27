@@ -48,8 +48,8 @@
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
 			<li class="nav-item"><a class="nav-link"
-				href="${pageContext.request.contextPath}/admin/view_offers">
-					<i class="fas fa-fw fa-users"></i> <span>Ofertas</span>
+				href="${pageContext.request.contextPath}/admin/view_offers"> <i
+					class="fas fa-fw fa-users"></i> <span>Ofertas</span>
 			</a></li>
 
 		</ul>
