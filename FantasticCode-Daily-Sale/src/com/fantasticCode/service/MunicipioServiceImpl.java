@@ -8,20 +8,15 @@ import org.springframework.stereotype.Service;
 import com.fantasticCode.entities.Municipio;
 import com.fantasticCode.repositories.MunicipioRepository;
 
-
 @Service
 public class MunicipioServiceImpl implements MunicipioService {
-	
+
 	@Autowired
-	MunicipioRepository municipioRepository ;
-	
-	
+	MunicipioRepository municipioRepository;
 
 	public List<Municipio> findAll() {
 		// TODO Auto-generated method stub
 		return municipioRepository.findAll();
 	}
-	
 
-	
 }

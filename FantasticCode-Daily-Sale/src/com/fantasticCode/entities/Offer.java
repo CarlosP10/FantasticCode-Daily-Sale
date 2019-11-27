@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,45 +19,45 @@ import javax.persistence.TemporalType;
 @Table(schema = "public", name = "table_offer")
 public class Offer {
 	@Id
-	@GeneratedValue(generator="offer_seq", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "offer_seq", sequenceName = "public.offer_seq",allocationSize=1)
+	@GeneratedValue(generator = "offer_seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "offer_seq", sequenceName = "public.offer_seq", allocationSize = 1)
 	@Column(name = "offer_id")
 	private Integer idoffer;
-	
+
 	@Column(name = "name")
 	private String offername;
-	
+
 	@Column(name = "description")
 	private String description;
-	
+
 	@Column(name = "duration")
 	private String duration;
-	
+
 	@Column(name = "url_poster")
 	private String urlposter;
-	
+
 	@Column(name = "availability")
 	private int availability;
 
 	@Column(name = "start_date")
 	private Date startdate;
-	
+
 	@Column(name = "end_date")
 	private Date enddate;
-	
+
 	@Column(name = "code")
 	private String offer_code;
-	
+
 	@Column(name = "state")
 	private int offer_state;
-	
+
 	@Column(name = "price_range")
 	private float price_range;
-			
+
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_offer_type", referencedColumnName = "id_type")
 	private Offer_type type;
-	
+
 	@Column(name = "creation_date_hour")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creation_date_hour;
@@ -189,13 +190,4 @@ public class Offer {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	
-
-	
-	
-	
-	
-	
 }

@@ -13,49 +13,47 @@ import com.fantasticCode.entities.Account;
 import com.fantasticCode.repositories.AccountRepository;;
 
 @Service
-public class AccountServiceImpl implements AccountService{
+public class AccountServiceImpl implements AccountService {
 
 	@Autowired
-	AccountRepository accountRepository ;
-	
-	
+	AccountRepository accountRepository;
 
 	public List<Account> findAll(int page) {
 		// TODO Auto-generated method stub
 		return accountRepository.findAll(PageRequest.of(page, 10, new Sort(Direction.ASC, "idaccount"))).getContent();
 	}
-	
+
 	public Account findOne(Integer account) {
 		// TODO Auto-generated method stub
 		return accountRepository.findById(account).get();
 	}
-		
+
 	public long countAll() {
 		// TODO Auto-generated method stub
 		return accountRepository.count();
 	}
 
-	
 	public void save(Account account) {
 		accountRepository.save(account);
 	}
 
-
 	@Override
 	public void delete(Account account) {
 		accountRepository.delete(account);
-		
+
 	}
-	
+
 	public boolean findOneUser(String username, String password) throws DataAccessException {
-		boolean result=false;
-		if(accountRepository.findOneUserInt(username, password)==1) result=true;
+		boolean result = false;
+		if (accountRepository.findOneUserInt(username, password) == 1)
+			result = true;
 		return result;
 	}
-	
+
 	public boolean findOneUserActive(String username, String password) throws DataAccessException {
-		boolean result=false;
-		if(accountRepository.findOneUserActive(username, password)==1) result=true;
+		boolean result = false;
+		if (accountRepository.findOneUserActive(username, password) == 1)
+			result = true;
 		return result;
 	}
 
@@ -64,6 +62,5 @@ public class AccountServiceImpl implements AccountService{
 		// TODO Auto-generated method stub
 		return accountRepository.findOneUser(username, password);
 	}
-	
-	
+
 }

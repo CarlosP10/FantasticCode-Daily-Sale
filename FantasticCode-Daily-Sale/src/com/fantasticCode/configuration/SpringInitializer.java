@@ -15,9 +15,8 @@ public class SpringInitializer implements WebApplicationInitializer {
 		AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
 		ctx.register(SpringConfiguration.class);
 		ctx.setServletContext(container);
-
 		ServletRegistration.Dynamic servlet = container.addServlet("spring-software", new DispatcherServlet(ctx));
-
+		// Indica el mapeo inicial de la apliacion URL de la app.
 		servlet.addMapping("/");
 		servlet.setLoadOnStartup(1);
 

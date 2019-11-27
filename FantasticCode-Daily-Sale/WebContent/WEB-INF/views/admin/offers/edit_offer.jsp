@@ -95,7 +95,7 @@
 					<!-- 					AQUIII TIENE QUE IR EL CONTENIDO -->
 
 					<form
-						action="${pageContext.request.contextPath}/admin/save_new_offer"
+						action="${pageContext.request.contextPath}/admin/save_edit_offer/${offer.idoffer}"
 						method="post">
 						<div class="anuncio">
 							<div class="card shadow mb-4"
@@ -256,13 +256,14 @@
 														<div class="col-auto">
 															<div class="h5 mb-0 font-weight-bold text-gray-800">
 																<div class="form-group">
-
+																	<fmt:formatDate pattern="yyyy-MM-dd"
+																		value="${offer.startdate}" var="theFormattedDateStart" />
 																	<fmt:formatDate pattern="yyyy-MM-dd"
 																		value="${offer.enddate}" var="theFormattedDate" />
 																	<input type="date" class="form-control" id="fechainc"
-																		min="2019-01-01" max="2100-12-31" name="enddate"
-																		required value="${theFormattedDate}"> <small
-																		id="nameHelp" class="form-text text-muted">Ingrese
+																		min="${theFormattedDateStart}" max="2100-12-31"
+																		name="enddate" required value="${theFormattedDate}">
+																	<small id="nameHelp" class="form-text text-muted">Ingrese
 																		la fecha de fin de la oferta</small>
 																</div>
 															</div>
@@ -309,12 +310,18 @@
 													<div
 														class="text-xs font-weight-bold text-success text-uppercase mb-1">Estado</div>
 													<div class="h5 mb-0 font-weight-bold text-gray-800 ">
-														<label class="switch align-items-center"> <c:set
-																var="status" value="${offer_list.offer_state}" /> <input
-															type="checkbox" name="offer_state" value="1" checked>
-															<span class="slider round"></span> <input type="hidden"
-															name="offer_state" value="0" /> <span
-															class="slider round"></span>
+														<label class="switch align-items-center"> 
+														<input type="checkbox" name="offer_state" value="1" style="color: #428bca;">
+														<input type="hidden" name="offer_state" value="0">
+														<%-- <c:set var="active" value="${offer.offer_state}" /> 
+														<c:if test="${active<1}">
+															<input type="checkbox" name="offer_state" value="0">
+															<span class="slider round"></span>
+															</c:if> <c:if test="${active>0}">
+																<input type="checkbox" name="offer_state" value="1" checked>
+																<span class="slider round"></span>
+															</c:if>
+														--%>
 														</label>
 													</div>
 												</div>

@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -18,20 +19,19 @@ import javax.persistence.TemporalType;
 @Table(schema = "public", name = "table_reservation")
 public class Reservation {
 	@Id
-	@GeneratedValue(generator="reservation_seq", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "reservation_seq", sequenceName = "public.reservation_seq",allocationSize=1)
+	@GeneratedValue(generator = "reservation_seq", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "reservation_seq", sequenceName = "public.reservation_seq", allocationSize = 1)
 	@Column(name = "id_reservation")
 	private Integer idreservation;
-	
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_account", referencedColumnName = "id_account")
 	private Account account;
-	
+
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_offer", referencedColumnName = "offer_id")
 	private Offer offer;
-	
+
 	@Column(name = "reservation_date_hour")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date reservationdatehour;
@@ -81,7 +81,4 @@ public class Reservation {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	
 }

@@ -10,11 +10,15 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+//Indica que es una clase de configuracion.
 @Configuration
+//Habilita el framework MVC
 @EnableWebMvc
+//Indica los paquetes de la aplicacion.
 @ComponentScan(basePackages = "com.fantasticCode")
 public class SpringConfiguration implements WebMvcConfigurer {
-
+	// Bean que indica la ubicacion por medio del prefio y el tipo de archivos a
+	// utilizar con el sufijo .jsp.
 	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -29,6 +33,7 @@ public class SpringConfiguration implements WebMvcConfigurer {
 		return new MappingJackson2HttpMessageConverter();
 	}
 
+	// Permite el uso de la carpeta resources para imagenes,estilos etc.
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");

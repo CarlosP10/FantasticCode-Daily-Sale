@@ -1,4 +1,5 @@
 package com.fantasticCode.entities;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,11 +14,11 @@ public class Municipio {
 	@Id
 	@Column(name = "id")
 	private Integer idmunicipio;
-	
+
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_depto", referencedColumnName = "id")
 	private Departamento departamento;
-	
+
 	@Column(name = "municipio")
 	private String municipio;
 
@@ -56,6 +57,5 @@ public class Municipio {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 }
