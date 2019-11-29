@@ -25,4 +25,7 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
 	public int findOneUserActive(@Param("username") String username, @Param("password") String password)
 			throws DataAccessException;
 
+	@Query(nativeQuery = true, value = "select count(*) from public.table_account where username= :username")
+	public int findOneUsername(@Param("username") String username)
+			throws DataAccessException;
 }

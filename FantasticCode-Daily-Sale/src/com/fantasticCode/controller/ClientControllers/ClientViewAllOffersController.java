@@ -33,7 +33,7 @@ public class ClientViewAllOffersController extends SessionMethods {
 	public ModelAndView GeneralOffers(HttpSession session) {
 		redirectSession(session);
 		if (session.getAttribute("user") == null || session.getAttribute("role") == null
-				|| session.getAttribute("account_id") == null || (Integer) session.getAttribute("role") != 1) {
+				|| session.getAttribute("account_id") == null || (Integer) session.getAttribute("role") != 2) {
 			return new ModelAndView("redirect:/");
 		}
 		ModelAndView mav = new ModelAndView();

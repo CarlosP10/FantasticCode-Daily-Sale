@@ -63,4 +63,13 @@ public class AccountServiceImpl implements AccountService {
 		return accountRepository.findOneUser(username, password);
 	}
 
+	@Override
+	public boolean findOneUsername(String username) throws DataAccessException {
+		// TODO Auto-generated method stub
+		boolean result = false;
+		if (accountRepository.findOneUsername(username) == 1)
+			result = true;
+		return result;
+	}
+
 }

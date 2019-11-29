@@ -82,7 +82,10 @@
 				href="${pageContext.request.contextPath}/admin/view_offers"> <i
 					class="fas fa-fw fa-users"></i> <span>Ofertas</span>
 			</a></li>
-
+<li class="nav-item active"><a class="nav-link"
+				href="${pageContext.request.contextPath}/account/list"> <i
+					class="fas fa-fw fa-users"></i> <span>Cuentas</span>
+			</a></li>
 		</ul>
 
 		<div id="content-wrapper">
@@ -328,29 +331,7 @@
 
 							</div>
 
-							<div class="card shadow mb-4"
-								style="margin-left: 100px; margin-right: 100px">
-								<!-- Card Header - Accordion -->
-								<a href="#collapseCardExample" class="d-block card-header py-3"
-									data-toggle="collapse" role="button" aria-expanded="false"
-									aria-controls="collapseCardExample">
-									<h6 class=" font-weight-bold text-primary">Restricciones</h6>
-								</a>
-								<!-- Card Content - Collapse -->
-								<div class="collapse show" id="collapseCardExample" style="">
-									<div class="card-body">
-										<div class="form-group">
-											<label for="inputName"></label>
-											<textarea name="restrictions"
-												style="width: 100%; height: auto;" rows="10">
-						</textarea>
-											<small id="nameHelp" class="form-text text-muted">Ingrese
-												todas las restricciones deseadas.</small>
-										</div>
-
-									</div>
-								</div>
-							</div>
+							
 							<button type="submit" class="btn-outline-success btn "
 								value="Submit"
 								style="width: 500px; margin-right: 100px; margin-left: 100px">Guardar</button>

@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fantasticCode.entities.Municipio;
-import com.fantasticCode.repositories.MunicipioRepository;
+import com.fantasticCode.repositories.MunicipalityRepository;
 
 @Service
-public class MunicipioServiceImpl implements MunicipioService {
+public class MunicipalityServiceImpl implements MunicipalityService {
 
 	@Autowired
-	MunicipioRepository municipioRepository;
+	MunicipalityRepository municipioRepository;
 
 	public List<Municipio> findAll() {
 		// TODO Auto-generated method stub

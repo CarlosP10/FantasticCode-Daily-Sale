@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.fantasticCode.entities.Municipio;
 
-public interface MunicipioService {
+public interface MunicipalityService {
 
 	public List<Municipio> findAll();
 

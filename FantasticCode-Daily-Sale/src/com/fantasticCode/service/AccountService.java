@@ -23,6 +23,8 @@ public interface AccountService {
 	public boolean findOneUser(String username, String password) throws DataAccessException;
 
 	public boolean findOneUserActive(String username, String password) throws DataAccessException;
+	
+	public boolean findOneUsername(String username) throws DataAccessException;
 
 	public Account findOneUserByUsernamePassword(String username, String password);
 }

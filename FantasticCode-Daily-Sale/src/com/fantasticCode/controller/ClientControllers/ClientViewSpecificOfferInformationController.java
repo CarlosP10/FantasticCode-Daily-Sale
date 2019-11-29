@@ -35,7 +35,7 @@ public class ClientViewSpecificOfferInformationController extends SessionMethods
 	public ModelAndView OpenOffer(HttpSession session, @PathVariable(value = "id") int id) {
 		redirectSession(session);
 		if (session.getAttribute("user") == null || session.getAttribute("role") == null
-				|| session.getAttribute("account_id") == null || (Integer) session.getAttribute("role") != 1) {
+				|| session.getAttribute("account_id") == null || (Integer) session.getAttribute("role") != 2) {
 			return new ModelAndView("redirect:/");
 		}
 		ModelAndView mav = new ModelAndView();

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.fantasticCode.entities.Departamento;
 
-public interface DepartamentoService {
+public interface DepartamentService {
 
 	public List<Departamento> findAll();
 

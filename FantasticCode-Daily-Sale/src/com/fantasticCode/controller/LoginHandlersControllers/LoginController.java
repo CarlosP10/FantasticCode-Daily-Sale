@@ -46,7 +46,9 @@ public class LoginController extends SessionMethods {
 		// este y se redirecciona como rol administrador o cliente.
 		if (accountServ.findOneUser(username, password)) {
 			account = accountServ.findOneUserByUsernamePassword(username, password);
+			
 			if (account != null) {
+				if(account.getActivestate()!=0) {
 				account.setOnlinestatus(1);
 				accountServ.save(account);
 				sessionCreate(request, account);
@@ -55,10 +57,14 @@ public class LoginController extends SessionMethods {
 				} else {
 					mav.setViewName("redirect:/show_offers");
 				}
+				}else {
+					mav.setViewName("redirect:/");
+				}
 			} else {
 				redirectAttributes.addFlashAttribute("error", 0);
 				mav.setViewName("redirect:/");
 			}
+			
 		} else {
 			redirectAttributes.addFlashAttribute("error", 0);
 

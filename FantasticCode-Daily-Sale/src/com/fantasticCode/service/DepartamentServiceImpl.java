@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fantasticCode.entities.Departamento;
-import com.fantasticCode.repositories.DepartamentoRepository;
+import com.fantasticCode.repositories.DepartamentRepository;
 
 @Service
-public class DepartamentoServiceImpl implements DepartamentoService {
+public class DepartamentServiceImpl implements DepartamentService {
 
 	@Autowired
-	DepartamentoRepository departamentoRepository;
+	DepartamentRepository departamentoRepository;
 
 	public List<Departamento> findAll() {
 		// TODO Auto-generated method stub

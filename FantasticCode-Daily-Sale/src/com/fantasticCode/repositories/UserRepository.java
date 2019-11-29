@@ -13,6 +13,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	public int findOneUser(@Param("username") String username, @Param("password") String password)
 			throws DataAccessException;
 
+	
 	/*
 	 * @Query(nativeQuery=true, value="select id_user from public.table_user " +
 	 * "where u_name= :uname " + "and u_lastname= :ulastname " +

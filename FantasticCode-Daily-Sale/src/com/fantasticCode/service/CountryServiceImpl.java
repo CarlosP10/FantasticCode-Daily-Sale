@@ -5,16 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fantasticCode.entities.Paises;
-import com.fantasticCode.repositories.PaisRepository;
+import com.fantasticCode.entities.Countries;
+import com.fantasticCode.repositories.CountryRepository;
 
 @Service
-public class PaisServiceImpl implements PaisService {
+public class CountryServiceImpl implements CountryService {
 
 	@Autowired
-	PaisRepository paisRepository;
+	CountryRepository paisRepository;
 
-	public List<Paises> findAll() {
+	public List<Countries> findAll() {
 		// TODO Auto-generated method stub
 		return paisRepository.findAll();
 	}

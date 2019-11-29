@@ -42,10 +42,11 @@
 		<div class="anuncio">
 
 			<c:forEach items="${ofertas}" var="ofertas">
-				<img alt="Anuncio 1" src="${ofertas.urlposter}">
+				
 				<c:set var="active" value="${ofertas.offer_state}" />
 				<c:if test="${active>0}">
 					<div class="contenido-anuncio">
+						<img alt="Anuncio 1" src="${ofertas.urlposter}">
 						<h3>${ofertas.offername }</h3>
 						<p>${ofertas.description }</p>
 						<a

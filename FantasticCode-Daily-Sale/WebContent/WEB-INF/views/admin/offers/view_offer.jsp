@@ -82,7 +82,10 @@
 				href="${pageContext.request.contextPath}/admin/view_offers"> <i
 					class="fas fa-fw fa-users"></i> <span>Ofertas</span>
 			</a></li>
-
+<li class="nav-item active"><a class="nav-link"
+				href="${pageContext.request.contextPath}/account/list"> <i
+					class="fas fa-fw fa-users"></i> <span>Cuentas</span>
+			</a></li>
 		</ul>
 
 		<div id="content-wrapper">

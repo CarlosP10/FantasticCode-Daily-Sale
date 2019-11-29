@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(schema = "public", name = "paises")
-public class Paises {
+public class Countries {
 	@Id
 	@Column(name = "id")
 	private Integer idpais;
@@ -64,7 +64,7 @@ public class Paises {
 		this.name = name;
 	}
 
-	public Paises(Integer idpais, String code, String iso1, String iso2, String name) {
+	public Countries(Integer idpais, String code, String iso1, String iso2, String name) {
 		super();
 		this.idpais = idpais;
 		this.code = code;
@@ -73,7 +73,7 @@ public class Paises {
 		this.name = name;
 	}
 
-	public Paises() {
+	public Countries() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
