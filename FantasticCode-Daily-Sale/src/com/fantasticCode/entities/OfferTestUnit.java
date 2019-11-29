@@ -3,7 +3,7 @@ package com.fantasticCode.entities;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
-
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fantasticCode.repositories.OfferRepository;
 import com.fantasticCode.repositories.Offer_type_Repository;
+import com.fantasticCode.service.OfferService;
 import com.fantasticCode.service.Offer_type_Service;
 
 
@@ -27,7 +28,7 @@ public class OfferTestUnit {
 	@Autowired
 	private OfferRepository offer_repository;
 	
-	private Offer_type_Service offerService;
+	private OfferService offerService;
 	
 	Offer test;
 	
@@ -37,7 +38,7 @@ public class OfferTestUnit {
 							"offer name", 
 							"offer description", 
 							"10", 
-							"https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ",
+							"https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ.jpg",
 							1,
 							new GregorianCalendar(2019, Calendar.NOVEMBER, 24).getTime(),
 							new GregorianCalendar(2019, Calendar.NOVEMBER, 28).getTime(),
@@ -50,18 +51,38 @@ public class OfferTestUnit {
 	}
 	
 	@Test
-	public void saveOffer() {
-		
-		test = offer_repository.save(test);
-		
-	} 
-
-	@Test
-	public void findAllOffer() {
-		
-		List<Offer_type> resultList = offerService.findAll();
-		assertNotNull(resultList);
-		assertFalse(resultList.isEmpty());
+	public void testEndDate() {
+		assertTrue(test.setEnddate(new GregorianCalendar(2019, Calendar.NOVEMBER, 28).getTime()));
+		assertFalse(test.setEnddate(new GregorianCalendar(2019, Calendar.NOVEMBER, 23).getTime()));
 	}
+	
+	@Test
+	public void priceTest() {
+		assertTrue(test.setPrice_range(20));
+		assertFalse(test.setPrice_range(-5));
+	}
+	
+	@Test
+	public void urlTest() {
+		assertTrue(test.setUrlposter("https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ.jpg"));
+		assertTrue(test.setUrlposter("\"https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ.png"));
+		assertFalse(test.setUrlposter("\"https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/dogs_1280p_0.jpg?itok=4t_1_fSJ.jpn"));
+		
+	}
+	
+//	@Test
+//	public void saveOffer() {
+//		
+//		test = offer_repository.save(test);
+//		
+//	} 
+//
+//	@Test
+//	public void findAllOffer() {
+//		
+//		List<Offer> resultList = offerService.findAll();
+//		assertNotNull(resultList);
+//		assertFalse(resultList.isEmpty());
+//	}
 	
 }

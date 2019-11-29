@@ -167,11 +167,21 @@ public class ManageOfferController {
 		}
 
 		offer.setStartdate(start_d);
-		offer.setEnddate(end_d);
+		try {
+			offer.setEnddate(end_d);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		offer.setDuration(end_d.getTime() - start_d.getTime() + "");
 		offer.setOffer_code(offer_code);
 		offer.setOffer_state(offer_state);
-		offer.setPrice_range(price_range);
+		try {
+			offer.setPrice_range(price_range);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		offer.setCreation_date_hour(now);
 		// offer.setDuration(enddate.getTime()-startdate.getTime()+"");
 		offer.setType(offer_type_Service.findOne(type));
@@ -214,11 +224,21 @@ public class ManageOfferController {
 		}
 		
 		offer.setIdoffer(id);
-		offer.setEnddate(end_d);
+		try {
+			offer.setEnddate(end_d);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		offer.setDuration(end_d.getTime()-start_d.getTime()+"");
 		offer.setOffer_code(offer_code);
 		offer.setOffer_state(1);
-		offer.setPrice_range(price_range);
+		try {
+			offer.setPrice_range(price_range);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		offer.setCreation_date_hour(now);
 		//offer.setDuration(enddate.getTime()-startdate.getTime()+"");
 		offer.setType(offer_type_Service.findOne(type));

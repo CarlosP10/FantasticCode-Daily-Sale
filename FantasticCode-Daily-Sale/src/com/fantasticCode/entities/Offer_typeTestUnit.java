@@ -38,9 +38,7 @@ class Offer_typeTestUnit {
 
 	@Test
 	public void findAllOffer() {
-		List<Offer_type> offer1 = new ArrayList<Offer_type>();
-		offer1.add(new Offer_type(1,"comida"));
-		offer1.add(new Offer_type(2,"zapatos"));
+		
 		
 		List<Offer_type> resultList = offerService.findAll();
 		assertNotNull(resultList);
