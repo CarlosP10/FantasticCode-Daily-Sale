@@ -1,6 +1,7 @@
 package com.fantasticCode.entities;
 
 import java.util.Date;
+import java.util.regex.Pattern;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -98,8 +99,15 @@ public class Offer {
 		return urlposter;
 	}
 
-	public void setUrlposter(String urlposter) {
-		this.urlposter = urlposter;
+	public boolean setUrlposter(String urlposter) {
+		if(Pattern.matches("([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)" , urlposter)){
+			this.urlposter = urlposter;
+			return true;
+		}
+		else {
+			this.urlposter = null;
+			return false;
+		}
 	}
 
 	public int getAvailability() {
@@ -122,8 +130,16 @@ public class Offer {
 		return enddate;
 	}
 
-	public void setEnddate(Date enddate) {
-		this.enddate = enddate;
+	public boolean setEnddate(Date enddate) {
+		if(enddate.after(getStartdate())) {
+			this.enddate = enddate;
+			return true;
+		}
+			
+		else {
+			this.enddate = null;
+			return false;
+		}
 	}
 
 	public String getOffer_code() {
@@ -146,8 +162,15 @@ public class Offer {
 		return price_range;
 	}
 
-	public void setPrice_range(float price_range) {
-		this.price_range = price_range;
+	public boolean setPrice_range(float price_range) {
+		if(price_range < 0) {
+			this.price_range = 0;
+			return false;
+		}
+		else {
+			this.price_range = price_range;
+			return true;
+		}
 	}
 
 	public Offer_type getType() {
@@ -169,20 +192,23 @@ public class Offer {
 	public Offer(Integer idoffer, String offername, String description, String duration, String urlposter,
 			int availability, Date startdate, Date enddate, String offer_code, int offer_state, float price_range,
 			Offer_type type, Date creation_date_hour) {
+		
 		super();
-		this.idoffer = idoffer;
-		this.offername = offername;
-		this.description = description;
-		this.duration = duration;
-		this.urlposter = urlposter;
-		this.availability = availability;
-		this.startdate = startdate;
-		this.enddate = enddate;
-		this.offer_code = offer_code;
-		this.offer_state = offer_state;
-		this.price_range = price_range;
-		this.type = type;
-		this.creation_date_hour = creation_date_hour;
+		
+		setIdoffer(idoffer);
+		setOffername(offername);
+		setDescription(description);
+		setDuration(duration);
+		setUrlposter(urlposter);
+		setAvailability(availability);
+		setStartdate(startdate);
+		setEnddate(enddate);
+		setOffer_code(offer_code);
+		setOffer_state(offer_state);
+		setPrice_range(price_range);
+		setType(type);
+		setCreation_date_hour(creation_date_hour);
+		
 	}
 
 	public Offer() {
